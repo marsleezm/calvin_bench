@@ -12,6 +12,8 @@ def isfloat(value):
 
 a_type=sys.argv[1]
 files=glob("./results/"+a_type+"/*/output")
+if files == []:
+	files=glob(sys.argv[1]+"/*/output")
 for f in files:
 	with open(f) as ff:
 		content = ff.readlines()

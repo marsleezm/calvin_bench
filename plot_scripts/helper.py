@@ -119,7 +119,7 @@ def get_throughput(myfile):
 # 	return full_dict
 
 def build_config_dict(input_folder):
-	files=glob.glob(input_folder+"/*")
+	files=glob.glob(input_folder+"/2*")
 	config_reverse_dict = init_full_dict()
 	config_prop_dict = {}
 	config_set = {}
@@ -143,7 +143,7 @@ def build_config_dict(input_folder):
 	return config_reverse_dict, config_prop_dict, config_set
 
 def add_to_config_dict(config_reverse_dict, config_prop_dict, config_set, input_folder):
-	files=glob.glob(input_folder+"/*")
+	files=glob.glob(input_folder+"/22*")
 	for f in files:
 		config_file = os.path.join(f, "config")
 		content_str = get_config_str(config_file)
