@@ -38,7 +38,13 @@ echo $ToBench > $Folder/config
 echo $Type >> $Folder/config
 cat myconfig.conf >> $Folder/config
 echo "************ Running expr *****************"
-timeout 120 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
+if [ $Type == 't' ]
+then
+	sleep 120 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
+else
+	timeout 130 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
+fi
 #ln -s -f $Folder $CurFolder
 cd -
 echo "************ Expr finished *****************"
