@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
 
-./base_scripts/parallel_command.sh "`cat ./others`" "sudo pkill -f deployment"
-sudo pkill -f deployment
-./base_scripts/parallel_command.sh "sudo rm -r /var/lib/systemd/coredump/"
-./base_scripts/parallel_command.sh "sudo mkdir /var/lib/systemd/coredump/"
+set +e
+./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f deployment/db"
+pkill -f "deployment/db"
+set -e
+#./base_scripts/parallel_command.sh "rm -r /var/lib/systemd/coredump/"
+#./base_scripts/parallel_command.sh "mkdir /var/lib/systemd/coredump/"
 
 ToBench=$1
 Type=$2
@@ -40,10 +42,12 @@ cat myconfig.conf >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
-	sleep 120 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 140 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	timeout 130 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
+	sleep 65 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
+	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
 #ln -s -f $Folder $CurFolder
 cd -

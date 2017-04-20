@@ -17,7 +17,7 @@ fi
 echo $command" for nodes:"$nodes 
 for node in $nodes
 do
-   ssh -o ConnectTimeout=3 -t ubuntu@$node ${command/localhost/$node} 
+   ssh -o ConnectTimeout=3 -t $USER@$node ${command/localhost/$node} 
    sleep 1
 done
 echo $command done
