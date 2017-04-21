@@ -55,23 +55,24 @@ def parse_config(config_file):
 	return config_dict
 
 def init_full_dict():
-	full_dict = {}
-	full_dict['system_type'] ={}
-	full_dict['system_type']['calvin']=[]
-	full_dict['system_type']['spec_calvin']=[]
-	full_dict['bench_type'] = {}
-	full_dict['bench_type']['m']=[]
-	full_dict['bench_type']['t']=[]
-	full_dict['distribute_percent'] = {}
-	full_dict['distribute_percent'][0] = []
-	full_dict['dependent_percent'] = {}
-	full_dict['index_num'] =dict()
-	full_dict['index_size'] =dict()
-	full_dict['rw_set_size'] =dict()
-	full_dict['max_pend'] =dict()
-	full_dict['max_suspend'] =dict()
-	full_dict['max_sc'] =dict()
-	return full_dict
+    full_dict = {}
+    full_dict['system_type'] ={}
+    full_dict['system_type']['calvin']=[]
+    full_dict['system_type']['spec_calvin']=[]
+    full_dict['bench_type'] = {}
+    full_dict['bench_type']['m']=[]
+    full_dict['bench_type']['t']=[]
+    full_dict['distribute_percent'] = {}
+    full_dict['distribute_percent'][0] = []
+    full_dict['dependent_percent'] = {}
+    full_dict['index_num'] =dict()
+    full_dict['index_size'] =dict()
+    full_dict['rw_set_size'] =dict()
+    full_dict['max_pend'] =dict()
+    full_dict['max_suspend'] =dict()
+    full_dict['max_batch_size'] =dict()
+    full_dict['max_sc'] =dict()
+    return full_dict
 
 def add_to_full_dict(full_dict, config_file, prop_dict):
 	for key, value in prop_dict.items():
