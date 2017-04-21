@@ -5,6 +5,45 @@
 #./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
 #./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
 #./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
+./benchmark.sh spec_calvin m 1500 10 100 2 1000 1 1 1
+exit
+
+./benchmark.sh spec_calvin m 1500 10 0 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 0 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 1 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 1 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 10 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 10 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 100 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 10 100 2 1000 1 1 1
+
+./benchmark.sh spec_calvin m 1500 15 0 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 0 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 1 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 1 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 10 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 10 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 100 2 1000 1 1 1
+./benchmark.sh spec_calvin m 1500 15 100 2 1000 1 1 1
+
+./benchmark.sh calvin m 1000 10 0 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 0 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 1 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 1 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 10 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 10 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 100 2 1000 1 1 1
+./benchmark.sh calvin m 1000 10 100 2 1000 1 1 1
+
+./benchmark.sh calvin m 1000 15 0 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 0 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 1 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 1 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 10 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 10 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 100 2 1000 1 1 1
+./benchmark.sh calvin m 1000 15 100 2 1000 1 1 1
+exit
 
 ./benchmark.sh spec_calvin t 300 0 0 2 1000 1 1 1 
 ./benchmark.sh spec_calvin t 300 0 0 2 1000 1 1 1 
