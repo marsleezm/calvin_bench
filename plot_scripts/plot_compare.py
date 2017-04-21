@@ -27,12 +27,21 @@ max_suspend=9
 
 #input_folder="/home/li/Repository/calvin_bench/results/tpcc/Apr17/t"
 #input_folder="/home/li/Repository/calvin_bench/results/micro/resultApr18/"
-input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
-full_config_dict, config_prop_dict, config_set = build_config_dict(input_folder)
-avg_throughput_dict = calculate_avg_throughput(config_prop_dict)
+#input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
+input_folder1="./results/micro/Apr20/Apr20-alot/"
+input_folder2="./results/micro/Apr20/Apr20-spec-dependent/"
+full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder1)
+calculate_avg_throughput(config_prop_dict1)
 
-x_axis, series1 = get_throughput_series([('system_type', 'spec_calvin')], 'distribute_percent', 'max_pend', full_config_dict, config_prop_dict)
+full_config_dict2, config_prop_dict2, config_set2 = build_config_dict(input_folder2)
+calculate_avg_throughput(config_prop_dict2)
+
+x_axis, series1 = get_throughput_series([('system_type', 'calvin')], 'distribute_percent', 'dependent_percent', full_config_dict1, config_prop_dict1)
+x_axis, series2 = get_throughput_series([('system_type', 'spec_calvin')], 'distribute_percent', 'dependent_percent', full_config_dict2, config_prop_dict2)
+#x_axis2, series2 = get_throughput_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
+print series1
+print series2
 
 output_folder='./results/figures/'
-plot_lines(series1, [], x_axis, "Dependent 10", output_folder)
+plot_lines([series2, series1], ['SpecCalvin', 'Calvin'], x_axis, "SpecCalvin vs Calvin", output_folder)
 

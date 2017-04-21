@@ -5,8 +5,6 @@ import glob
 import os
 import numpy as np
 
-
-
 def isfloat(x):
     try:
         a = float(x)
@@ -131,7 +129,7 @@ def build_config_dict(input_folder):
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
-			print "Found repition for "+content_str+", original is "+first_appear 
+			#print "Found repition for "+content_str+", original is "+first_appear 
 			config_prop_dict[first_appear]['throughput'].append((commit, abort))
 		else:
 			config_set[content_str] = config_file
@@ -176,51 +174,62 @@ def calculate_avg_throughput(dict):
 			avga = np.average(aborts)
 			sc = np.std(commits)
 			sa = np.std(aborts)
-			print "Commit avg is" +str(avgc)+", avg aborts is "+str(avga) +", std c is "+str(sc)+", std a is "+str(sa)
+			#print "Commit avg is" +str(avgc)+", avg aborts is "+str(avga) +", std c is "+str(sc)+", std a is "+str(sa)
 			dict[key]['throughput'] = (avgc, avga, sc, sa)
 
+def complex_get(k, v, dict):
+    prop = v[1:]
+    full_set = Set()
+    for values, lists in dict[prop].items():
+        if values in dict[k]:
+            s1 = Set(lists)
+            s2 = Set(dict[k][values])
+            full_set = full_set.union(s1.intersection(s2))
+    return full_set
 
 def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
-	exist_set = Set()
-	## Find a set of dicts with fixed properties
-	for (k, v) in fixed_props:
-		new_set = Set(config_reverse_dict[k][v])
-		if len(exist_set) == 0:
+    exist_set = Set()
+    print fixed_props
+    for (k, v) in fixed_props:
+        if isfloat(v) == False and '=' == v[0]:
+            s = complex_get(k, v, config_reverse_dict)
+            new_set = s 
+        else:
+            new_set = Set(config_reverse_dict[k][v])
+        if len(exist_set) == 0:
 			exist_set = new_set
-		else:
+        else:
 			exist_set.intersection_update(new_set)
 	## Sort dicts in the set by line_diff_prop
-	line_dict = {}
-	for d in exist_set:
-		v = config_prop_dict[d][line_diff_prop]
-		if v in line_dict:	
-			line_dict[v].append(d) #config_prop_dict[d])
-		else:
-			line_dict[v] = [d] #config_prop_dict[d]]
+    line_dict = {}
+    for d in exist_set:
+        v = config_prop_dict[d][line_diff_prop]
+        if v in line_dict:	
+            line_dict[v].append(d) #config_prop_dict[d])
+        else:
+            line_dict[v] = [d] #config_prop_dict[d]]
 	## Sort line points according to point_diff_prop
-	for k, v in line_dict.items():
-		line_dict[k] = sorted(line_dict[k], key=lambda l:config_prop_dict[l][point_diff_prop])
-	return line_dict
+    for k, v in line_dict.items():
+        line_dict[k] = sorted(line_dict[k], key=lambda l:config_prop_dict[l][point_diff_prop])
+    return line_dict
 
 def get_throughput_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
-	series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
-	print series
-	th_list = []
-	x_axis = []
-	x_set = False
-	for prop, line_points in series.items():
-		tl = []
-		for l in line_points:
-			tl.append(config_prop_dict[l]['throughput'])
-			#print "Point prop is "+point_diff_prop+", "+str(config_prop_dict[l][point_diff_prop])
-			if x_set == False:
-				x_axis.append(config_prop_dict[l][point_diff_prop])
-		x_set = True
-		th_list.append((prop, tl))
-	th_list.sort()
-
-		
-	return x_axis, th_list
+    series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
+    print series
+    th_list = []
+    x_axis = []
+    x_set = False
+    for prop, line_points in series.items():
+        tl = []
+        for l in line_points:
+            tl.append(config_prop_dict[l]['throughput'])
+            #print "Point prop is "+point_diff_prop+", "+str(config_prop_dict[l][point_diff_prop])
+            if x_set == False:
+                x_axis.append(config_prop_dict[l][point_diff_prop])
+        x_set = True
+        th_list.append((prop, tl))
+    th_list.sort()
+    return x_axis, th_list
 	
 def to_string(dict):
 	dict1 = {}
