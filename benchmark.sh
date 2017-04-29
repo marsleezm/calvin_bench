@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
+sleep 3
 set +e
-./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f deployment/db"
+./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f deployment/db && cd spec_calvin && rm core"
 pkill -f "deployment/db"
 set -e
 #./base_scripts/parallel_command.sh "rm -r /var/lib/systemd/coredump/"
@@ -45,7 +46,7 @@ then
 	sleep 80 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 65 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 70 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
