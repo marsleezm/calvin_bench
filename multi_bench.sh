@@ -1,28 +1,67 @@
 #!/bin/bash
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
-#./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 20 1
-#./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
-#./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
-#./benchmark.sh spec_calvin m 1500 0 0 2 1000 1 40 1
 
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 1 1 1
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 100 100 100
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 200 200 200
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 400 400 400
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 800 800 800
+#./benchmark.sh spec_calvin t 1000 10 100 2 1000 10 1 10
+#./benchmark.sh spec_calvin t 1000 20 100 2 1000 10 1 10
+#./benchmark.sh spec_calvin t 1000 40 100 2 1000 10 1 10
+#./benchmark.sh spec_calvin t 1000 60 100 2 1000 10 1 10
+#./benchmark.sh spec_calvin t 1000 80 100 2 1000 10 1 10
+#./benchmark.sh spec_calvin t 1000 100 100 2 1000 10 1 10
 
+#./benchmark.sh calvin t 1000 10 100 2 1000 10 1 10
+#./benchmark.sh calvin t 1000 20 100 2 1000 10 1 10
+#./benchmark.sh calvin t 1000 40 100 2 1000 10 1 10
+./benchmark.sh calvin t 600 60 100 2 1000 10 1 10
+./benchmark.sh calvin t 600 80 100 2 1000 10 1 10
+./benchmark.sh calvin t 600 100 100 2 1000 10 1 10
+exit
+./benchmark.sh calvin m 1500 80 0 2 1000 10 1 10
+./benchmark.sh calvin m 1500 80 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 80 100 2 1000 10 1 10
+./benchmark.sh calvin m 1500 100 0 2 1000 10 1 10
+./benchmark.sh calvin m 1500 100 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 100 100 2 1000 10 1 10
+exit
+./benchmark.sh calvin m 1500 0 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 1 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 10 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 15 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 20 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 40 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 60 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 80 10 2 1000 10 1 10
+./benchmark.sh calvin m 1500 100 10 2 1000 10 1 10
 
-#./benchmark.sh spec_calvin m 1500 0 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 0.01 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 0.1 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 0.01 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 0.1 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 0.1 100 2 1000 10 1 10
-#./benchmark.sh spec_calvin m 1500 1 100 2 1000 10 1 10
+./benchmark.sh calvin t 1000 0 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 1 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 10 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 15 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 20 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 40 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 60 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 80 10 2 1000 10 1 10
+./benchmark.sh calvin t 1000 100 10 2 1000 10 1 10
+exit
+./benchmark.sh spec_calvin m 1500 0 100 2 1000 10 1 10
 ./benchmark.sh spec_calvin m 1500 1 100 2 1000 10 1 10
 ./benchmark.sh spec_calvin m 1500 10 100 2 1000 10 1 10
 ./benchmark.sh spec_calvin m 1500 15 100 2 1000 10 1 10
+./benchmark.sh spec_calvin m 1500 20 100 2 1000 10 1 10
+./benchmark.sh spec_calvin m 1500 40 100 2 1000 10 1 10
+./benchmark.sh spec_calvin m 1500 60 100 2 1000 10 1 10
+./benchmark.sh spec_calvin m 1500 80 100 2 1000 10 1 10
+./benchmark.sh spec_calvin m 1500 100 100 2 1000 10 1 10
+
+./benchmark.sh spec_calvin t 1000 0 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 1 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 10 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 15 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 20 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 40 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 60 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 80 100 2 1000 10 1 10
+./benchmark.sh spec_calvin t 1000 100 100 2 1000 10 1 10
 #./benchmark.sh spec_calvin m 1500 10 100 2 1000 10 1 10
 #./benchmark.sh spec_calvin m 1500 20 100 2 1000 10 1 10
 #./benchmark.sh spec_calvin m 1500 50 100 2 1000 10 1 10
