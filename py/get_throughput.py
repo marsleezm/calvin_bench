@@ -63,7 +63,10 @@ for f in files:
 			th_dict[part]=(0, 0, 0)
 	for k, v in th_dict.items():
 		(l, t, a) = v
-		th_output.write(k + ' throughput is '+str(t/l) +', abort is '+str(a/l))
+		try:
+			th_output.write(k + ' throughput is '+str(t/l) +', abort is '+str(a/l))
+		except:
+			print "Some error!"
 		th_output.write('\n')
 	th_output.write('Average throughput is '+str(total_commit/max(1,line_count/3.0))+', abort is '+str(total_abort/max(1,line_count/3.0)))
 	th_output.write('\n')

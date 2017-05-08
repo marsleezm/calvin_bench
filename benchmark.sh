@@ -41,8 +41,8 @@ echo "systype = " $ToBench > $Folder/config
 echo "benchtype = " $Type >> $Folder/config
 cat myconfig.conf >> $Folder/config
 cp $Folder/config tmp
-awk -F ' = ' '{printf $2}END{pritnf '\n'}' tmp > $Folder/config 
-awk -F ' = ' '{printf $1}END{pritnf '\n'}' tmp >> $Folder/config 
+awk -F '=' '{printf $2}END{printf "\n"}' tmp > $Folder/config 
+awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config 
 
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
