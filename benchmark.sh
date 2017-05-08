@@ -37,9 +37,13 @@ cat ../$ToBench/myconfig.conf
 ./base_scripts/copy_to_all.sh ../$ToBench/myconfig.conf ~/$ToBench
 
 cd ../$ToBench
-echo $ToBench > $Folder/config
-echo $Type >> $Folder/config
+echo "systype = " $ToBench > $Folder/config
+echo "benchtype = " $Type >> $Folder/config
 cat myconfig.conf >> $Folder/config
+cp $Folder/config tmp
+awk -F ' = ' '{printf $2}END{pritnf '\n'}' tmp > $Folder/config 
+awk -F ' = ' '{printf $1}END{pritnf '\n'}' tmp >> $Folder/config 
+
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
