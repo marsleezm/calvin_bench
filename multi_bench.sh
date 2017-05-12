@@ -13,7 +13,42 @@
 #./benchmark.sh spec_calvin t 1000 80 100 2 1000 10 1 10
 #./benchmark.sh spec_calvin t 1000 100 100 2 1000 10 1 10
 
-./benchmark.sh aggr_spec_calvin m 1500 40 10 2 1000 10 1 10
+./benchmark.sh spec_calvin m 100 0 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 0 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin m 100 0 50 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 50 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 50 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 50 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 50 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin m 100 0 100 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 100 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 100 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 100 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 100 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin m 100 0 0 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 0 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 0 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 0 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 0 5 50000 10 1 10 2 200
+
+./benchmark.sh spec_calvin m 100 0 50 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 50 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 50 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 50 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 50 5 50000 10 1 10 2 200
+
+./benchmark.sh spec_calvin m 100 0 100 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 200 0 100 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 300 0 100 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 400 0 100 5 50000 10 1 10 2 200
+./benchmark.sh spec_calvin m 500 0 100 5 50000 10 1 10 2 200
+exit
 exit
 ./benchmark.sh aggr_spec_calvin m 1500 60 10 2 1000 10 1 10
 ./benchmark.sh aggr_spec_calvin m 1500 60 100 2 1000 10 1 10

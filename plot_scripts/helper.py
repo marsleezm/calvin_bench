@@ -40,28 +40,27 @@ def parse_config(config_file):
 	with open(config_file) as f:
 		content = f.readlines()
 	config_dict ={}
-	config_dict['system_type']=content[0][:-1]
-	config_dict['bench_type']=content[1][:-1]
-	content = content[2:]
-	for line in content:
-		if '=' in line:
-			line = line.replace(' ', '')
-			line = line.replace('\n', '')
-			[k, v] = line.split('=')
-			if v[0].isdigit():
-				config_dict[k]=get_form(v)
-			else:
-				config_dict[k]=v
+	content[0] = content[0].replace('\n', '')
+	content[1] = content[1].replace('\n', '')
+
+	keys = filter(bool, content[1].split(' '))
+	values = filter(bool, content[0].split(' '))
+	for i, key in enumerate(keys):
+		if values[i][0].isdigit():
+			config_dict[key]=get_form(values[i])
+		else:
+			config_dict[key]=values[i]
 	return config_dict
 
 def init_full_dict():
     full_dict = {}
-    full_dict['system_type'] ={}
-    full_dict['system_type']['calvin']=[]
-    full_dict['system_type']['spec_calvin']=[]
-    full_dict['bench_type'] = {}
-    full_dict['bench_type']['m']=[]
-    full_dict['bench_type']['t']=[]
+    full_dict['systype'] ={}
+    full_dict['systype']['calvin']=[]
+    full_dict['systype']['spec_calvin']=[]
+    full_dict['systype']['aggr_spec_calvin']=[]
+    full_dict['benchtype'] = {}
+    full_dict['benchtype']['m']=[]
+    full_dict['benchtype']['t']=[]
     full_dict['distribute_percent'] = {}
     full_dict['distribute_percent'][0] = []
     full_dict['dependent_percent'] = {}
@@ -151,7 +150,7 @@ def add_to_config_dict(config_reverse_dict, config_prop_dict, config_set, input_
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
-			print "Found repition for "+config_file+", original is "+first_appear 
+			print("Found repition for "+config_file+", original is "+first_appear) 
 			config_prop_dict[first_appear]['throughput'].append((commit, abort))
 		else:
 			config_set[content_str] = config_file
@@ -190,17 +189,19 @@ def complex_get(k, v, dict):
 
 def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
     exist_set = Set()
-    print fixed_props
     for (k, v) in fixed_props:
-        if isfloat(v) == False and '=' == v[0]:
-            s = complex_get(k, v, config_reverse_dict)
-            new_set = s 
-        else:
-            new_set = Set(config_reverse_dict[k][v])
-        if len(exist_set) == 0:
+		print "Key is "+str(k)
+		print "Value is "+str(v)
+		if isfloat(v) == False and '=' == v[0]:
+			s = complex_get(k, v, config_reverse_dict)
+			new_set = s 
+		else:
+			new_set = Set(config_reverse_dict[k][v])
+		if len(exist_set) == 0:
 			exist_set = new_set
-        else:
+		else:
 			exist_set.intersection_update(new_set)
+
 	## Sort dicts in the set by line_diff_prop
     line_dict = {}
     for d in exist_set:

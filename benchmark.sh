@@ -27,6 +27,8 @@ fi
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_sc $8
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_pend $9
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_suspend ${10}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${11}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${12}
 
 
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -51,15 +53,16 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
-	sleep 80 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 85 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 65 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 70 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
 #ln -s -f $Folder $CurFolder
 wait
+./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
 cd -
 echo "************ Expr finished *****************"
 
