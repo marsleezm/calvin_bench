@@ -4,7 +4,7 @@ set -e
 sleep 3
 set +e
 ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f deployment/db"
-./base_scripts/parallel_command.sh "`cat ./others`" "cd spec_calvin && rm core"
+./base_scripts/parallel_command.sh "`cat ./nodes`" "cd spec_calvin && rm core"
 pkill -f "deployment/db"
 set -e
 
@@ -13,6 +13,15 @@ Type=$2
 if [ $ToBench == "aggr_spec_calvin" ];
 then
 BenchFolder="spec_calvin"
+elif [ $ToBench == "spec_calvin_skeen" ];
+then
+BenchFolder="spec_calvin"
+elif [ $ToBench == "aggr_spec_calvin_skeen" ];
+then
+BenchFolder="spec_calvin"
+elif [ $ToBench == "calvin_less_recon" ];
+then
+BenchFolder="calvin"
 else
 BenchFolder=$ToBench
 fi
@@ -51,10 +60,10 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
-	sleep 80 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 80 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  && pkill -f deployment && pkill -f benchmark &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 65 && pkill -f benchmark && pkill -f deployment && ./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 65 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ./others`" "pkill -f benchmark && pkill -f deployment"  && pkill -f deployment && pkill -f benchmark &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
