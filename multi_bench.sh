@@ -13,6 +13,78 @@
 #./benchmark.sh spec_calvin t 1000 80 100 2 1000 10 1 10
 #./benchmark.sh spec_calvin t 1000 100 100 2 1000 10 1 10
 
+#./benchmark.sh spec_calvin_skeen m 100 0 0 5 1000 10 1 10 2 200
+#./benchmark.sh spec_calvin_skeen m 200 0 0 5 1000 10 1 10 2 200
+#./benchmark.sh spec_calvin_skeen m 300 0 0 5 1000 10 1 10 2 200
+#./benchmark.sh spec_calvin_skeen m 400 0 0 5 1000 10 1 10 2 200
+#./benchmark.sh spec_calvin_skeen m 500 0 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 10 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 20 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 50 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 100 0.01 0 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin_skeen m 200 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 300 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 400 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 500 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 600 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 700 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 800 0.01 0 5 1000 10 1 10 2 200
+exit
+
+./benchmark.sh spec_calvin_skeen m 100 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 300 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 400 0.01 0 5 1000 10 1 10 2 200
+exit
+./benchmark.sh spec_calvin_skeen m 100 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 300 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 400 0.1 0 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin_skeen m 100 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 300 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 400 1 0 5 1000 10 1 10 2 200
+#./benchmark.sh spec_calvin m 100 1 0 5 1000 10 1 10 2 200
+exit
+./benchmark.sh spec_calvin_skeen m 200 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 300 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 400 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 500 1 0 5 1000 10 1 10 2 200
+exit
+
+./benchmark.sh calvin m 100 0 50 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 200 0 50 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 300 0 50 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 400 0 50 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 500 0 50 5 1000 10 1 10 2 200
+
+./benchmark.sh calvin m 100 0 100 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 200 0 100 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 300 0 100 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 400 0 100 5 1000 10 1 10 2 200
+./benchmark.sh calvin m 500 0 100 5 1000 10 1 10 2 200
+
+./benchmark.sh calvin m 100 0 0 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 200 0 0 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 300 0 0 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 400 0 0 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 500 0 0 5 50000 10 1 10 2 200
+
+./benchmark.sh calvin m 100 0 50 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 200 0 50 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 300 0 50 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 400 0 50 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 500 0 50 5 50000 10 1 10 2 200
+
+./benchmark.sh calvin m 100 0 100 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 200 0 100 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 300 0 100 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 400 0 100 5 50000 10 1 10 2 200
+./benchmark.sh calvin m 500 0 100 5 50000 10 1 10 2 200
+
+exit
 ./benchmark.sh spec_calvin m 100 0 0 5 1000 10 1 10 2 200
 ./benchmark.sh spec_calvin m 200 0 0 5 1000 10 1 10 2 200
 ./benchmark.sh spec_calvin m 300 0 0 5 1000 10 1 10 2 200

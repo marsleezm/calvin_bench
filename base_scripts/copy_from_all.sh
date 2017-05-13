@@ -19,7 +19,7 @@ for node in $nodes
 do
     FileName=${file/localhost/$node}
     SafeFileName=$node-$FileName
-    scp -i key ubuntu@$node:$path/$FileName $folder/$SafeFileName &
+    scp  $node:$path/$FileName $folder/$SafeFileName &
     #mv $folder/$FileName $folder/$SafeFileName
 done
 
