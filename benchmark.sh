@@ -72,6 +72,8 @@ fi
 #ln -s -f $Folder $CurFolder
 wait
 cd -
-./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
+#./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
+cp ../$BenchFolder/*output.txt $Folder
+wait
 echo "************ Expr finished *****************"
 

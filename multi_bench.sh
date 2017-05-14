@@ -18,10 +18,21 @@
 #./benchmark.sh spec_calvin_skeen m 300 0 0 5 1000 10 1 10 2 200
 #./benchmark.sh spec_calvin_skeen m 400 0 0 5 1000 10 1 10 2 200
 #./benchmark.sh spec_calvin_skeen m 500 0 0 5 1000 10 1 10 2 200
-./benchmark.sh spec_calvin_skeen m 10 0.01 0 5 1000 10 1 10 2 200
-./benchmark.sh spec_calvin_skeen m 20 0.01 0 5 1000 10 1 10 2 200
-./benchmark.sh spec_calvin_skeen m 50 0.01 0 5 1000 10 1 10 2 200
-./benchmark.sh spec_calvin_skeen m 100 0.01 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 10 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 50 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 100 0.1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 0.1 0 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin_skeen m 10 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 50 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 100 1 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 1 0 5 1000 10 1 10 2 200
+
+./benchmark.sh spec_calvin_skeen m 10 10 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 50 10 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 100 10 0 5 1000 10 1 10 2 200
+./benchmark.sh spec_calvin_skeen m 200 10 0 5 1000 10 1 10 2 200
+exit
 
 ./benchmark.sh spec_calvin_skeen m 200 0.01 0 5 1000 10 1 10 2 200
 ./benchmark.sh spec_calvin_skeen m 300 0.01 0 5 1000 10 1 10 2 200
