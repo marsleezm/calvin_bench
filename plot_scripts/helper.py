@@ -81,13 +81,19 @@ def add_to_full_dict(full_dict, config_file, prop_dict):
 			else:
 				full_dict[key][value] = [config_file]
 
-def get_throughput(myfile):
-	with open(myfile) as f:
-		content = f.readlines()
-	t = content[-1].split('throughput is ')[1]
-	commit = t.split(',')[0]
-	abort = t.split(',')[1].split('abort is ')[1]
-	return (float(commit), float(abort))
+def get_data(myfile):
+    commit = 0
+    abort = 0
+    latency = 0
+    process_lat = 0
+    for line in open(myfile):
+        if 'Total commit' in line:
+            commit = float(line.split(',')[0].split(': ')[1])
+            abort = float(line.split(',')[1].split(': ')[1]) 
+        elif 'Total latency' in line:
+            latency = float(line.split(',')[0].split('is ')[1])
+            process_lat = float(line.split(',')[1].split(': ')[1]) 
+    return (commit, abort, latency, process_lat)
 
 # 
 # def build_throughput_dict(input_folder):
@@ -97,7 +103,7 @@ def get_throughput(myfile):
 # 	for f in files:
 # 		config_file = os.path.join(f, "config")
 # 		config_throughput = os.path.join(f, "throughput")
-# 		(commit, abort) = get_throughput(config_throughput)
+# 		(commit, abort) = get_data(config_throughput)
 # 		content = get_config(config_file)
 # 		if content in config_set:
 # 			first_appear = config_set[content]
@@ -112,7 +118,7 @@ def get_throughput(myfile):
 # 	for f in files:
 # 		config_file = os.path.join(f, "config")
 # 		config_throughput = os.path.join(f, "throughput")
-# 		(commit, abort) = get_throughput(config_throughput)
+# 		(commit, abort) = get_data(config_throughput)
 # 		full_dict[config_file] = (commit, abort)
 # 	return full_dict
 
@@ -125,18 +131,18 @@ def build_config_dict(input_folder):
 		config_file = os.path.join(f, "config")
 		content_str = get_config_str(config_file)
 		config_throughput = os.path.join(f, "throughput")
-		(commit, abort) = get_throughput(config_throughput)
+		(commit, abort, latency, process_lat) = get_data(config_throughput)
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
 			#print "Found repition for "+content_str+", original is "+first_appear 
-			config_prop_dict[first_appear]['throughput'].append((commit, abort))
+			config_prop_dict[first_appear]['throughput'].append((commit, abort, latency, process_lat))
 		else:
 			config_set[content_str] = config_file
 			config_dict = parse_config(config_file)
 			add_to_full_dict(config_reverse_dict, config_file, config_dict)
 			config_prop_dict[config_file] = config_dict
-			config_prop_dict[config_file]['throughput'] = [(commit, abort)]
+			config_prop_dict[config_file]['throughput'] = [(commit, abort, latency, process_lat)]
 
 	return config_reverse_dict, config_prop_dict, config_set
 
@@ -146,18 +152,18 @@ def add_to_config_dict(config_reverse_dict, config_prop_dict, config_set, input_
 		config_file = os.path.join(f, "config")
 		content_str = get_config_str(config_file)
 		config_throughput = os.path.join(f, "throughput")
-		(commit, abort) = get_throughput(config_throughput)
+		(commit, abort, latency, process_lat) = get_data(config_throughput)
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
 			print("Found repition for "+config_file+", original is "+first_appear) 
-			config_prop_dict[first_appear]['throughput'].append((commit, abort))
+			config_prop_dict[first_appear]['throughput'].append((commit, abort, latency, process_lat))
 		else:
 			config_set[content_str] = config_file
 			config_dict = parse_config(config_file)
 			add_to_full_dict(config_reverse_dict, config_file, config_dict)
 			config_prop_dict[config_file] = config_dict
-			config_prop_dict[config_file]['throughput'] = [(commit, abort)]
+			config_prop_dict[config_file]['throughput'] = [(commit, abort, latency, process_lat)]
 
 	return config_reverse_dict, config_prop_dict, config_set
 
@@ -165,17 +171,23 @@ def calculate_avg_throughput(dict):
 	for key, d in dict.items():
 		value = d['throughput']
 		if len(value) == 1:
-			[(commit, abort)] = value
-			dict[key]['throughput'] = (commit, abort, 0, 0)
+			[(commit, abort, latency, process_lat)] = value
+			dict[key]['throughput'] = (commit, abort, latency, process_lat, 0, 0, 0, 0)
 		else:
-			commits = [c for (c, a) in value]
-			aborts = [a for (c, a) in value]
+			commits = [c for (c, a, l, pl) in value]
+			aborts = [a for (c, a, l, pl) in value]
+			ls = [l for (c, a, l, pl) in value]
+			pls = [pl for (c, a, l, pl) in value]
 			avgc = np.average(commits)
 			avga = np.average(aborts)
+			avgl = np.average(ls)
+			avgpl = np.average(pls)
 			sc = np.std(commits)
 			sa = np.std(aborts)
+			sl = np.std(ls)
+			spl = np.std(pls)
 			#print "Commit avg is" +str(avgc)+", avg aborts is "+str(avga) +", std c is "+str(sc)+", std a is "+str(sa)
-			dict[key]['throughput'] = (avgc, avga, sc, sa)
+			dict[key]['throughput'] = (avgc, avga, avgl, avgpl, sc, sa, sl, spl)
 
 def complex_get(k, v, dict):
     prop = v[1:]
@@ -215,7 +227,7 @@ def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict
         line_dict[k] = sorted(line_dict[k], key=lambda l:config_prop_dict[l][point_diff_prop])
     return line_dict
 
-def get_throughput_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
+def get_data_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
     series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
     print series
     th_list = []

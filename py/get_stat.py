@@ -62,5 +62,5 @@ for folder in folders:
         th_output.write('\n')
     th_output.write('Total commit: '+str(tt) +', abort: '+str(ta))
     th_output.write('\n')
-    th_output.write('Total latency is '+str(sum(final_lat)/sum(total_lat_line))+', process latency: '+str(sum(process_lat)/sum(total_lat_line)))
+    th_output.write('Total latency is '+str(sum(final_lat.values())/sum(total_lat_line.values()))+', process latency: '+str(sum(process_lat.values())/sum(total_lat_line.values())))
     th_output.write('\n')
