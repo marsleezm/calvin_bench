@@ -22,9 +22,6 @@ BenchFolder="spec_calvin"
 elif [ $ToBench == "calvin_less_recon" ];
 then
 BenchFolder="calvin"
-elif [ $ToBench == "calvin_general_recon" ];
-then
-BenchFolder="calvin"
 else
 BenchFolder=$ToBench
 fi
@@ -39,7 +36,6 @@ fi
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_sc $8
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_pend $9
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_suspend ${10}
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${11}
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${12}
 
@@ -67,12 +63,15 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
+	sleep 85 && pkill -f deployment && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
 	sleep 70 && pkill -f deployment && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment"  &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
+#ln -s -f $Folder $CurFolder
+wait
 cd -
 #./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
 cp ../$BenchFolder/*output.txt $Folder
