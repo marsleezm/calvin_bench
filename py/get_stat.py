@@ -23,7 +23,6 @@ for folder in folders:
     final_lat = {}
     total_lat_line = {}
     for i, f in enumerate(files):
-        print f
         in_th = False
         in_lat = False
         total_commit[i] = 0
@@ -53,8 +52,6 @@ for folder in folders:
     tt = 0
     ta = 0
     for k, v in total_commit.items():
-        print k
-        print v
         th_output.write('['+str(k)+'] commit: '+str(v/total_commit_line[k]) +', abort: '+str(total_abort[k]/total_commit_line[k]))
         th_output.write(', total latency: '+str(final_lat[k]/total_lat_line[k])+', process latency: '+str(process_lat[k]/total_lat_line[k]))
         tt += v/total_commit_line[k]
@@ -62,5 +59,9 @@ for folder in folders:
         th_output.write('\n')
     th_output.write('Total commit: '+str(tt) +', abort: '+str(ta))
     th_output.write('\n')
-    th_output.write('Total latency is '+str(sum(final_lat.values())/sum(total_lat_line.values()))+', process latency: '+str(sum(process_lat.values())/sum(total_lat_line.values())))
+    try:
+    	th_output.write('Total latency is '+str(sum(final_lat.values())/sum(total_lat_line.values()))+', process latency: '+str(sum(process_lat.values())/sum(total_lat_line.values())))
+    except:
+		print folder
+		print "Some error!"
     th_output.write('\n')
