@@ -45,9 +45,16 @@ x_axis, series4 = get_data_series([('distribute_percent', 10), ('benchtype', 'm'
 
 #x_axis2, series2 = get_data_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
 print series1
+<<<<<<< HEAD
 print series2
 print series3
 print series4
+=======
+#print series2
+#print series3
+#print series4
+#print series5
+>>>>>>> cf66dbc328f966cebd7665a74ce1939fe0225b62
 
 time = strftime("%Y-%m-%d-%H%M%S", gmtime())
 output_folder = os.path.join('./results/figures/', time)

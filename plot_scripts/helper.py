@@ -202,19 +202,17 @@ def complex_get(k, v, dict):
 def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
     exist_set = Set()
     for (k, v) in fixed_props:
-		print "Key is "+str(k)
-		print "Value is "+str(v)
-		if isfloat(v) == False and '=' == v[0]:
-			s = complex_get(k, v, config_reverse_dict)
-			new_set = s 
-		else:
-			new_set = Set(config_reverse_dict[k][v])
-		if len(exist_set) == 0:
-			exist_set = new_set
-		else:
-			exist_set.intersection_update(new_set)
+        if isfloat(v) == False and '=' == v[0]:
+            s = complex_get(k, v, config_reverse_dict)
+            new_set = s 
+        else:
+            new_set = Set(config_reverse_dict[k][v])
+        if len(exist_set) == 0:
+            exist_set = new_set
+        else:
+            exist_set.intersection_update(new_set)
 
-	## Sort dicts in the set by line_diff_prop
+    ## Sort dicts in the set by line_diff_prop
     line_dict = {}
     for d in exist_set:
         v = config_prop_dict[d][line_diff_prop]
