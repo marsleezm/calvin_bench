@@ -24,7 +24,7 @@ def get_rough_th(path, th_dict):
     content = [x.strip() for x in content]
     content = [line for line in content if 'Completed' in line]
     for l in content:
-        part=l[:3]
+        part=l[:2]
         if isint(part):
             node = int(part)
             if len(l.split("Completed")[1]) < 2:
@@ -53,6 +53,7 @@ def get_rough_th(path, th_dict):
 
             if node in th_dict:
                 (old_th, old_abort, cnt) = th_dict[node]
+                #print "Add th "+str(th)+", and abort "+str(abort)
                 th_dict[node]=(old_th+th, old_abort+abort, cnt+1)
             else:
                 th_dict[node]=(th, abort, 1)
@@ -127,6 +128,9 @@ for folder in folders:
     sum_flat = sum([flat for (plat, flat, cnt) in latency_dict.values()])
     sum_lat_line = max(sum([cnt for (plat, flat, cnt) in latency_dict.values()]), 1)
 
+    #print sum_commit
+    #print sum_abort
+    #print sum_commit_line
     th_output.write('Total commit: '+str(sum_commit/sum_commit_line*num_nodes) +', abort: '+str(sum_abort/sum_commit_line*num_nodes))
     th_output.write('\n')
     th_output.write('Total latency is '+str(sum_flat/sum_lat_line)+', process latency: '+str(sum_plat/sum_lat_line))

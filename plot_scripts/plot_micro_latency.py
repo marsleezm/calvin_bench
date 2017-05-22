@@ -29,7 +29,7 @@ max_suspend=9
 #input_folder="/home/li/Repository/calvin_bench/results/micro/resultApr18/"
 #input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
 #input_folder1="./results/micro/Apr20/Apr20-alot/"
-input_folder="/home/li/Repository/calvin_bench/results/micro/May20/"
+input_folder="/home/li/Repository/calvin_bench/results/micro/micro_calvin/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 
