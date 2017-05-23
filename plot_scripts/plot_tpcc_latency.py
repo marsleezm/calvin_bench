@@ -30,31 +30,24 @@ max_suspend=9
 #input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
 #input_folder1="./results/micro/Apr20/Apr20-alot/"
 #input_folder="/Users/liz/Documents/MyDocument/repositories/calvin_bench/results/May14"
-input_folder="./results/May15-8/"
+input_folder="./results/May17/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 
 #full_config_dict2, config_prop_dict2, config_set2 = build_config_dict(input_folder)
 #calculate_avg_throughput(config_prop_dict2)
 
-x_axis, series1 = get_data_series([('distribute_percent', 0), ('benchtype', 'm')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series1 = get_data_series([('distribute_percent', 0), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 #x_axis, series2 = get_data_series([('distribute_percent', 0.01), ('benchtype', 'm')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series2 = get_data_series([('distribute_percent', 0.1), ('benchtype', 'm')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series3 = get_data_series([('distribute_percent', 1), ('benchtype', 'm')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series4 = get_data_series([('distribute_percent', 10), ('benchtype', 'm')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series2 = get_data_series([('distribute_percent', 0.1), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series3 = get_data_series([('distribute_percent', 1), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series4 = get_data_series([('distribute_percent', 10), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 
 #x_axis2, series2 = get_data_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
 print series1
-<<<<<<< HEAD
 print series2
 print series3
 print series4
-=======
-#print series2
-#print series3
-#print series4
-#print series5
->>>>>>> cf66dbc328f966cebd7665a74ce1939fe0225b62
 
 time = strftime("%Y-%m-%d-%H%M%S", gmtime())
 output_folder = os.path.join('./results/figures/', time)

@@ -22,9 +22,8 @@ def plot_load(throughput_list, legend_list, x_labels, caption, output_folder):
     legends = []
     for h, throughput in enumerate(throughput_list):
         for i, (leg, th_tuple) in enumerate(throughput):
-            #(th, th_std, abort, abort_std) = th_tuple
             th_list = [th for (th, abort, lat, process_lat, th_std, abort_std, lat_std, pl_std) in th_tuple]
-            lat_list = [lat for (th, abort, lat, process_lat, th_std, abort_std, lat_std, pl_std) in th_tuple]
+            lat_list = [lat/1000 for (th, abort, lat, process_lat, th_std, abort_std, lat_std, pl_std) in th_tuple]
             hlt,  = plt.plot(th_list, lat_list, color=colors[i], linewidth=1.5, marker=markers[i], linestyle=ls[h])
             handlers.append(hlt)
             #print legend_list[h]
@@ -32,10 +31,9 @@ def plot_load(throughput_list, legend_list, x_labels, caption, output_folder):
 
 	plt.legend(handlers, legends, loc=0, labelspacing=0.1, handletextpad=0.15, borderpad=0.26)
 	plt.xlabel('Committed txns/s')
-	plt.xlabel('Percent of distributed transactions')
-   # plt.ylim(0,1500)
-	#plt.xscale("log", nonposx='clip')
-
+	plt.ylabel('Latency (ms)')
+	plt.xlim([0, 250000])
+	#plt.ylim([0, 5000])
+	plt.yscale("log")
 	plt.savefig(output_folder+'/'+caption+'.pdf', format='pdf', bbox_inches='tight')
 	#plt.savefig(output_folder+'/'+caption+'.jpg',  bbox_inches='tight')
-
