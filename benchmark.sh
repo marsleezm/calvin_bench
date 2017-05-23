@@ -1,10 +1,8 @@
 #!/bin/bash
 set -e
 
-sleep 3
 set +e
-./base_scripts/parallel_command.sh "`cat ./others`" "pkill -f deployment/db"
-./base_scripts/parallel_command.sh "`cat ./nodes`" "cd spec_calvin && rm core"
+./base_scripts/parallel_command.sh "`cat ./nodes`" "rm spec_calvin/core && rm calvin/core"
 pkill -f "deployment/db"
 set -e
 
@@ -67,15 +65,16 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
+	sleep 130 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 70 && pkill -f deployment && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment"  &
+	sleep 90 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment &
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
 cd -
 #./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
-cp ../$BenchFolder/*output.txt $Folder
 wait
+cp ../$BenchFolder/*output.txt $Folder
 echo "************ Expr finished *****************"
 
