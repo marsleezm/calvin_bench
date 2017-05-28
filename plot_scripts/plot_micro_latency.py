@@ -29,39 +29,23 @@ max_suspend=9
 #input_folder="/home/li/Repository/calvin_bench/results/micro/resultApr18/"
 #input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
 #input_folder1="./results/micro/Apr20/Apr20-alot/"
-input_folder="/home/li/Repository/calvin_bench/results/micro/micro_calvin/"
+#input_folder="/home/li/Repository/calvin_bench/results/micro/micro_calvin/"
+input_folder="/home/li/Repository/calvin_bench/results/micro/all_micro/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 
 #full_config_dict2, config_prop_dict2, config_set2 = build_config_dict(input_folder)
 #calculate_avg_throughput(config_prop_dict2)
-
-x_axis, series1 = get_data_series([('distribute_percent', 0), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series2 = get_data_series([('distribute_percent', 0.01), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series3 = get_data_series([('distribute_percent', 0.1), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series4 = get_data_series([('distribute_percent', 1), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series5 = get_data_series([('distribute_percent', 10), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series6 = get_data_series([('distribute_percent', 20), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series7 = get_data_series([('distribute_percent', 50), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-x_axis, series8 = get_data_series([('distribute_percent', 100), ('benchtype', 'm')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
-
-#x_axis2, series2 = get_data_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
-print series1
-#print series2
-#print series3
-#print series4
-#print series5
-
 time = strftime("%Y-%m-%d-%H%M%S", gmtime())
 output_folder = os.path.join('./results/figures/', time)
 os.mkdir(output_folder)
+legends=['calvin0%', 'calvin50%', 'calvin100%', 'sc0%', 'sc100%', 'aggrsc0%', 'aggrsc100%']
 
-plot_load([series1], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "distribute0", output_folder)
-plot_load([series2], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "distribute0.01", output_folder)
-plot_load([series3], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist0.1", output_folder)
-plot_load([series4], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist1", output_folder)
-plot_load([series5], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist10", output_folder)
-plot_load([series6], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist0.1", output_folder)
-plot_load([series7], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist1", output_folder)
-plot_load([series8], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist10", output_folder)
-
+distribute_percent=[0, 0.01, 0.1, 1, 10, 20]
+conflict_size=[1000,50000]
+for dp in distribute_percent:
+    for cf in conflict_size:
+        x_axis, series11 = get_data_series([('distribute_percent', dp), ('benchtype', 'm'), ('index_size', cf), ('systype', 'calvin_general_recon')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
+        x_axis, series12 = get_data_series([('distribute_percent', dp), ('benchtype', 'm'), ('index_size', cf), ('systype', 'spec_calvin')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
+        x_axis, series13 = get_data_series([('distribute_percent', dp), ('benchtype', 'm'), ('index_size', cf), ('systype', 'aggr_spec_calvin')], 'dependent_percent', 'max_batch_size', full_config_dict1, config_prop_dict1)
+        plot_load([series11, series12, series13], legends, x_axis, "dist"+str(dp)+","+str(cf), output_folder)

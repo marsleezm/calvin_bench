@@ -21,8 +21,18 @@ def get_rough_th(path, th_dict):
     # Opened a file 
     with open(path+'/output') as ff:
         content = ff.readlines()
-    content = [x.strip() for x in content]
     content = [line for line in content if 'Completed' in line]
+    for i in range(len(content)):
+	    if 'Completed 0 txns/sec, 0 transaction restart' in content[i] or 'Completed 0 txns/sec, 0 txns/sec aborted' in content[i]:
+		    content[i] = 'NONE'
+	    else:
+		    break
+    for i in xrange(len(content)-1, 0, -1):
+        if 'Completed 0 txns/sec, 0 transaction restart' in content[i] or 'Completed 0 txns/sec, 0 txns/sec aborted' in content[i]:
+			content[i] = 'NONE'
+        else:
+            break
+
     for l in content:
         part=l[:2]
         if isint(part):
@@ -62,11 +72,25 @@ def get_precise_th(files, result_dict):
     for f in files:
         node = int(f.split('/')[-1].split('output.txt')[0])
         result_dict[node] = (0,0,0)
-        for line in open(f):
-            if line == 'THROUGHPUT\n':
-                continue
-            elif line == 'LATENCY\n':
+
+        content = open(f).readlines()
+        end_index = content.index('LATENCY\n')
+        throughput_lines = content[1:end_index]
+        ## Filter warming up throughput lines
+        for i in range(len(throughput_lines)):
+            if throughput_lines[i] == '0, 0\n':
+                throughput_lines[i] = 'NONE'
+            else:
                 break
+        for i in xrange(len(throughput_lines)-1, 0, -1):
+            if throughput_lines[i] == '0, 0\n':
+                throughput_lines[i] = 'NONE'
+            else:
+                break
+		
+        for line in throughput_lines:
+            if line == 'NONE':
+                continue
             else:
                 if ',' in line:
                     (commit, abort, line_num) = result_dict[node]
@@ -104,7 +128,7 @@ for folder in folders:
     
     get_latency(files,  latency_dict)
 
-    th_output=open(folder+'/throughput', 'w')
+    th_output=open(folder+'/nonzero_throughput', 'w')
     tt = 0
     ta = 0
     for k in result_dict.keys():

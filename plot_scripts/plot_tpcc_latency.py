@@ -30,7 +30,7 @@ max_suspend=9
 #input_folder="/home/li/Repository/calvin_bench/results/micro/Apr19/"
 #input_folder1="./results/micro/Apr20/Apr20-alot/"
 #input_folder="/Users/liz/Documents/MyDocument/repositories/calvin_bench/results/May14"
-input_folder="./results/May17/"
+input_folder="./results/tpcc/all/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 
@@ -42,6 +42,9 @@ x_axis, series1 = get_data_series([('distribute_percent', 0), ('benchtype', 't')
 x_axis, series2 = get_data_series([('distribute_percent', 0.1), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 x_axis, series3 = get_data_series([('distribute_percent', 1), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 x_axis, series4 = get_data_series([('distribute_percent', 10), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series5 = get_data_series([('distribute_percent', 20), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series6 = get_data_series([('distribute_percent', 50), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
+x_axis, series7 = get_data_series([('distribute_percent', 100), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 
 #x_axis2, series2 = get_data_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
 print series1
@@ -50,12 +53,15 @@ print series3
 print series4
 
 time = strftime("%Y-%m-%d-%H%M%S", gmtime())
-output_folder = os.path.join('./results/figures/', time)
+output_folder = os.path.join('./results/figures/tpcc/', time)
 os.mkdir(output_folder)
 
-plot_load([series1], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "distribute0", output_folder)
-plot_load([series2], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "distribute0.1", output_folder)
+plot_load([series1], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist0", output_folder)
+plot_load([series2], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist0.1", output_folder)
 plot_load([series3], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist1", output_folder)
 plot_load([series4], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist10", output_folder)
+plot_load([series5], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist20", output_folder)
+plot_load([series6], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist50", output_folder)
+plot_load([series7], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist100", output_folder)
 #plot_load([series5], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], x_axis, "dist10", output_folder)
 
