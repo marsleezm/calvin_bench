@@ -40,7 +40,7 @@ def plot_lines(throughput_list, legend_list, x_labels, caption, output_folder):
 	plt.legend(handlers, legends, loc=0, labelspacing=0.1, handletextpad=0.15, borderpad=0.26)
 	plt.xlabel('Committed txns/s')
 	plt.xlabel('Percent of distributed transactions')
-   # plt.ylim(0,1500)
+    plt.ylim(0,1500)
 	#plt.xscale("log", nonposx='clip')
 
 	#plt.savefig(output_folder+'/'+caption+'.pdf', format='pdf', bbox_inches='tight')

@@ -35,7 +35,7 @@ def plot_load(throughput_list, legend_list, x_labels, caption, output_folder):
 	plt.xlabel('Committed txns/s')
 	plt.ylabel('Latency (ms)')
 	#plt.xlim([0, 300000])
-	#plt.ylim([0, 5000])
+	plt.ylim([0, 1500])
 	#plt.yscale("log")
 	#plt.savefig(output_folder+'/'+caption+'.pdf', format='pdf', bbox_inches='tight')
 	plt.savefig(output_folder+'/'+caption+'.png',  bbox_inches='tight')
