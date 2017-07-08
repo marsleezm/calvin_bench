@@ -176,18 +176,19 @@ def calculate_avg_throughput(dict):
 		value = d['throughput']
 		if len(value) == 1:
 			[(commit, abort, latency, process_lat)] = value
-			dict[key]['throughput'] = (commit, abort, latency, process_lat, 0, 0, 0, 0)
+			dict[key]['throughput'] = (commit, abort/(commit+abort), latency/1000, process_lat/1000, 0, 0, 0, 0)
 		else:
 			commits = [c for (c, a, l, pl) in value]
 			aborts = [a for (c, a, l, pl) in value]
-			ls = [l for (c, a, l, pl) in value]
-			pls = [pl for (c, a, l, pl) in value]
+			abort_rate = [a/(c+a) for a, c in zip(aborts, commits)]
+			ls = [l/1000 for (c, a, l, pl) in value]
+			pls = [pl/1000 for (c, a, l, pl) in value]
 			avgc = np.average(commits)
-			avga = np.average(aborts)
+			avga = np.average(abort_rate)
 			avgl = np.average(ls)
 			avgpl = np.average(pls)
 			sc = np.std(commits)
-			sa = np.std(aborts)
+			sa = np.std(abort_rate)
 			sl = np.std(ls)
 			spl = np.std(pls)
 			if sc*8 > avgc:
@@ -206,19 +207,25 @@ def complex_get(k, v, dict):
     return full_set
 
 def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
+	# Include all configurations that safisfy fixed_props
     exist_set = Set()
     for (k, v) in fixed_props:
         if isfloat(v) == False and '=' == v[0]:
             s = complex_get(k, v, config_reverse_dict)
             new_set = s 
         else:
+			# The set contains all configuration has value 'v' for property 'k'
             new_set = Set(config_reverse_dict[k][v])
         if len(exist_set) == 0:
             exist_set = new_set
         else:
+			# Intersect to only take configs with all props satisfied
             exist_set.intersection_update(new_set)
 
     ## Sort dicts in the set by line_diff_prop
+	## Each entry to line_dict consists of
+	## key is v: the value of a property
+	## value is list of configs that has this value
     line_dict = {}
     for d in exist_set:
         v = config_prop_dict[d][line_diff_prop]
@@ -234,27 +241,24 @@ def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict
 def get_data_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
     series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
     config_list = {} 
-    for v, l in series.items():
-        config_list[v] = []
-        for f in l:
-            config_list[v].append(config_prop_dict[f]['config'])
-    print config_list
+    #for v, l in series.items():
+    #    config_list[v] = []
+    #    for f in l:
+    #        config_list[v].append(config_prop_dict[f]['config'])
+    #print config_list
     #print series
 
-    th_list = []
+    lines = []
     x_axis = []
-    x_set = False
     for prop, line_points in series.items():
         tl = []
+        x_axis = []
         for l in line_points:
             tl.append(config_prop_dict[l]['throughput'])
-            #print "Point prop is "+point_diff_prop+", "+str(config_prop_dict[l][point_diff_prop])
-            if x_set == False:
-                x_axis.append(config_prop_dict[l][point_diff_prop])
-        x_set = True
-        th_list.append((prop, tl))
-    th_list.sort()
-    return x_axis, th_list
+            x_axis.append(config_prop_dict[l][point_diff_prop])
+        lines.append((prop, tl, x_axis))
+    lines.sort()
+    return lines 
 	
 def to_string(dict):
 	dict1 = {}
