@@ -36,10 +36,16 @@ fi
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf index_size $7
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_sc $8
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_pend $9
+if [ $Type == "t" ] 
+then
+ 	./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 100 
+else
+ 	./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 90 
+fi
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_suspend ${10}
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${11}
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${12}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf all_recon ${13}
 
 
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -65,15 +71,22 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
-	sleep 130 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment &
+	sleep 130 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+	cd ../calvin_bench
+	./monitor_cpu.sh $Folder 26
+    cd ../$BenchFolder
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 90 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment &
+	sleep 100 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+	cd ../calvin_bench
+	./monitor_cpu.sh $Folder 20
+    cd ../$BenchFolder
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
 fi
 cd -
 #./base_scripts/copy_from_all.sh output.txt ./spec_calvin $Folder/
+
 wait
 cp ../$BenchFolder/*output.txt $Folder
 echo "************ Expr finished *****************"
