@@ -33,7 +33,7 @@ max_suspend=9
 #input_folder="./results/tpcc/all/"
 #input_folder="results/June/tpcc/calvin_after_fix/all_recon"
 #input_folder="results/June/tpcc/spec_calvinJune27/"
-input_folder="results/June/tpcc/calvinJune28/"
+input_folder="results/July/tpcc/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 
@@ -48,27 +48,39 @@ calculate_avg_throughput(config_prop_dict1)
 #series6 = get_data_series([('distribute_percent', 20), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 #series7 = get_data_series([('distribute_percent', 50), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
 #series8 = get_data_series([('distribute_percent', 100), ('benchtype', 't')], 'systype', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series1 = get_data_series([('distribute_percent', 0), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series2 = get_data_series([('distribute_percent', 0.01), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series3 = get_data_series([('distribute_percent', 0.1), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series4 = get_data_series([('distribute_percent', 1), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series5 = get_data_series([('distribute_percent', 10), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series6 = get_data_series([('distribute_percent', 20), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series7 = get_data_series([('distribute_percent', 50), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
-series8 = get_data_series([('distribute_percent', 100), ('benchtype', 't')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series11 = get_data_series([('distribute_percent', 0), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series21 = get_data_series([('distribute_percent', 0.01), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series31 = get_data_series([('distribute_percent', 0.1), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series41 = get_data_series([('distribute_percent', 1), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series51 = get_data_series([('distribute_percent', 10), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series61 = get_data_series([('distribute_percent', 20), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series71 = get_data_series([('distribute_percent', 50), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series81 = get_data_series([('distribute_percent', 100), ('benchtype', 't'), ('systype', 'aggr_spec_calvin')], 'multi_txn_num_parts', 'max_batch_size', full_config_dict1, config_prop_dict1)
 
+series1 = get_data_series([('distribute_percent', 0), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series2 = get_data_series([('distribute_percent', 0.01), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series3 = get_data_series([('distribute_percent', 0.1), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series4 = get_data_series([('distribute_percent', 1), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series5 = get_data_series([('distribute_percent', 10), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series6 = get_data_series([('distribute_percent', 20), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+#series7 = get_data_series([('distribute_percent', 50), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+series8 = get_data_series([('distribute_percent', 100), ('benchtype', 't'), ('systype', 'calvin_less_recon')], 'all_recon', 'max_batch_size', full_config_dict1, config_prop_dict1)
+
+#print series6
+#print series61
+#print series6+series61
 #x_axis2, series2 = get_data_series([('system_type', 'spec_calvin'), ('max_pend', '=max_sc')], 'distribute_percent', 'max_sc', full_config_dict, config_prop_dict)
 
 time = strftime("%Y-%m-%d-%H%M%S", gmtime())
 output_folder = os.path.join('./results/figures/tpcc/', time)
 os.mkdir(output_folder)
 
-plot_load([series1], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist0", output_folder)
-plot_load([series2], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist0.01", output_folder)
-plot_load([series3], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist0.1", output_folder)
-plot_load([series4], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist1", output_folder)
-plot_load([series5], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist10", output_folder)
-plot_load([series6], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist20", output_folder)
-plot_load([series7], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist50", output_folder)
-plot_load([series8], ['Calvin', 'SpecCalvin', 'SpecCalvinSkeen'], "dist100", output_folder)
+plot_load([series1+series11], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist0", output_folder)
+#plot_load([series2+series21], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist0.01", output_folder)
+#plot_load([series3+series31], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist0.1", output_folder)
+plot_load([series4+series41], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist1", output_folder)
+plot_load([series5+series51], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist10", output_folder)
+#plot_load([series6+series61], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist20", output_folder)
+#plot_load([series7+series71], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist50", output_folder)
+plot_load([series8+series81], ['Calvin', 'CalvinAllRecon', 'SpecCalvin'], "dist100", output_folder)
 
