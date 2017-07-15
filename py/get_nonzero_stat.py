@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os
 import sys
+import shutil
 from glob import glob
 
 def isfloat(value):
@@ -117,7 +118,7 @@ if folders == []:
 	folders=glob(sys.argv[1]+"/2*")
 
 for folder in folders:
-    print folder
+    #print folder
     files = glob(folder+"/*output.txt")
     result_dict = {} 
     latency_dict = {}
@@ -132,7 +133,7 @@ for folder in folders:
     tt = 0
     ta = 0
     for k in result_dict.keys():
-        print k
+        #print k
         (commit, abort, result_line) = result_dict[k] 
         if k in latency_dict and latency_dict[k] != (0, 0, 0):
             (process_latency, final_latency, lat_line) = latency_dict[k] 
@@ -155,11 +156,15 @@ for folder in folders:
     #print sum_commit
     #print sum_abort
     #print sum_commit_line
-    th_output.write('Total commit: '+str(sum_commit/sum_commit_line*num_nodes) +', abort: '+str(sum_abort/sum_commit_line*num_nodes))
-    th_output.write('\n')
-    if sum_flat == 0:
-        sum_flat = 10000
-    if sum_plat == 0:
-        sum_plat = 10000
-    th_output.write('Total latency is '+str(sum_flat/sum_lat_line)+', process latency: '+str(sum_plat/sum_lat_line))
-    th_output.write('\n')
+    if sum_commit_line != 0:
+        th_output.write('Total commit: '+str(sum_commit/sum_commit_line*num_nodes) +', abort: '+str(sum_abort/sum_commit_line*num_nodes))
+        th_output.write('\n')
+        if sum_flat == 0:
+            sum_flat = 10000
+        if sum_plat == 0:
+            sum_plat = 10000
+        th_output.write('Total latency is '+str(sum_flat/sum_lat_line)+', process latency: '+str(sum_plat/sum_lat_line))
+        th_output.write('\n')
+    else:
+        print folder+" crashed in the beginning, removing it!"
+        shutil.rmtree(folder)

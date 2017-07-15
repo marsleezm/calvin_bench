@@ -209,14 +209,19 @@ def complex_get(k, v, dict):
 def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
 	# Include all configurations that safisfy fixed_props
     exist_set = Set()
+    set_inited = False
     for (k, v) in fixed_props:
         if isfloat(v) == False and '=' == v[0]:
             s = complex_get(k, v, config_reverse_dict)
             new_set = s 
         else:
 			# The set contains all configuration has value 'v' for property 'k'
-            new_set = Set(config_reverse_dict[k][v])
-        if len(exist_set) == 0:
+            if v in config_reverse_dict[k]:
+                new_set = Set(config_reverse_dict[k][v])
+            else:
+                return {} 
+        if set_inited == False:
+            set_inited = True
             exist_set = new_set
         else:
 			# Intersect to only take configs with all props satisfied
@@ -241,12 +246,12 @@ def get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict
 def get_data_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict):
     series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
     config_list = {} 
-    #for v, l in series.items():
-    #    config_list[v] = []
-    #    for f in l:
-    #        config_list[v].append(config_prop_dict[f]['config'])
-    #print config_list
-    #print series
+    for v, l in series.items():
+        config_list[v] = []
+        for f in l:
+            config_list[v].append(config_prop_dict[f]['config'])
+    print config_list
+    print series
 
     lines = []
     x_axis = []
