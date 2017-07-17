@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
-seq="1 2"
+seq="1"
 cs="1000"
 #deps="0 50 100"
 deps="0"
