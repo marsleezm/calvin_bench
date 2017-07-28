@@ -20,6 +20,9 @@ BenchFolder="spec_calvin"
 elif [ $ToBench == "calvin_less_recon" ];
 then
 BenchFolder="calvin"
+elif [ $ToBench == "ssmr" ];
+then
+BenchFolder="calvin"
 elif [ $ToBench == "calvin_general_recon" ];
 then
 BenchFolder="calvin"
