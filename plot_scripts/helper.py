@@ -46,10 +46,13 @@ def parse_config(config_file):
 	keys = filter(bool, content[1].split(' '))
 	values = filter(bool, content[0].split(' '))
 	for i, key in enumerate(keys):
-		if values[i][0].isdigit():
-			config_dict[key]=get_form(values[i])
+		if i >= len(values):
+			config_dict[key]=0
 		else:
-			config_dict[key]=values[i]
+			if values[i][0].isdigit():
+				config_dict[key]=get_form(values[i])
+			else:
+				config_dict[key]=values[i]
 	return config_dict
 
 def init_full_dict():

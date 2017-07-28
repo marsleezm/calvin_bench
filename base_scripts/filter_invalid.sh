@@ -6,6 +6,6 @@ do
 	if [ $num -gt 100 ]
 	then
 		rm -r $f
-		#echo $f $num
+		echo $f $num
 	fi
 done
