@@ -51,6 +51,7 @@ cd ../$BenchFolder
 cd -
 
 wait
-cp ../$BenchFolder/*output.txt $Folder
+./base_scripts/copy_from_all.sh *output.txt ~/$BenchFolder $Folder
+#cp ../$BenchFolder/*output.txt $Folder
 echo "************ Expr finished *****************"
 
