@@ -1,0 +1,886 @@
+00: General params: 
+00: 	Distribute txn percent: 0
+00: 	Dependent txn percent: 0
+00: 	Max batch size: 10
+00: 	Num of threads: 4
+00: Micro benchmark. Parameters: 
+00: 	Key per txn: 10
+00: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+00: Normal queue mode
+00: Using Paxos replication!
+00: Completed 0 txns/sec, 0 transaction restart, 0  second 
+00: Completed 0 txns/sec, 0 transaction restart, 1  second 
+00: Completed 0 txns/sec, 0 transaction restart, 2  second 
+00: Completed 0 txns/sec, 0 transaction restart, 3  second 
+00: Completed 0 txns/sec, 0 transaction restart, 4  second 
+00: Completed 0 txns/sec, 0 transaction restart, 5  second 
+00: Completed 0 txns/sec, 0 transaction restart, 6  second 
+00: Completed 0 txns/sec, 0 transaction restart, 7  second 
+00: Completed 0 txns/sec, 0 transaction restart, 8  second 
+01: General params: 
+01: 	Distribute txn percent: 0
+01: 	Dependent txn percent: 0
+01: 	Max batch size: 10
+01: 	Num of threads: 4
+01: Micro benchmark. Parameters: 
+01: 	Key per txn: 10
+01: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+01: Normal queue mode
+01: Using Paxos replication!
+01: Completed 0 txns/sec, 0 transaction restart, 0  second 
+01: Completed 0 txns/sec, 0 transaction restart, 1  second 
+01: Completed 0 txns/sec, 0 transaction restart, 2  second 
+01: Completed 0 txns/sec, 0 transaction restart, 3  second 
+01: Completed 0 txns/sec, 0 transaction restart, 4  second 
+01: Completed 0 txns/sec, 0 transaction restart, 5  second 
+01: Completed 0 txns/sec, 0 transaction restart, 6  second 
+01: Completed 0 txns/sec, 0 transaction restart, 7  second 
+02: General params: 
+02: 	Distribute txn percent: 0
+02: 	Dependent txn percent: 0
+02: 	Max batch size: 10
+02: 	Num of threads: 4
+02: Micro benchmark. Parameters: 
+02: 	Key per txn: 10
+02: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+02: Normal queue mode
+02: Using Paxos replication!
+02: Completed 0 txns/sec, 0 transaction restart, 0  second 
+02: Completed 0 txns/sec, 0 transaction restart, 1  second 
+02: Completed 0 txns/sec, 0 transaction restart, 2  second 
+02: Completed 0 txns/sec, 0 transaction restart, 3  second 
+02: Completed 0 txns/sec, 0 transaction restart, 4  second 
+02: Completed 0 txns/sec, 0 transaction restart, 5  second 
+02: Completed 0 txns/sec, 0 transaction restart, 6  second 
+02: Completed 0 txns/sec, 0 transaction restart, 7  second 
+03: General params: 
+03: 	Distribute txn percent: 0
+03: 	Dependent txn percent: 0
+03: 	Max batch size: 10
+03: 	Num of threads: 4
+03: Micro benchmark. Parameters: 
+03: 	Key per txn: 10
+03: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+03: Normal queue mode
+03: Using Paxos replication!
+03: Completed 0 txns/sec, 0 transaction restart, 0  second 
+03: Completed 0 txns/sec, 0 transaction restart, 1  second 
+03: Completed 0 txns/sec, 0 transaction restart, 2  second 
+03: Completed 0 txns/sec, 0 transaction restart, 3  second 
+03: Completed 0 txns/sec, 0 transaction restart, 4  second 
+03: Completed 0 txns/sec, 0 transaction restart, 5  second 
+03: Completed 0 txns/sec, 0 transaction restart, 6  second 
+03: Completed 0 txns/sec, 0 transaction restart, 7  second 
+04: General params: 
+04: 	Distribute txn percent: 0
+04: 	Dependent txn percent: 0
+04: 	Max batch size: 10
+04: 	Num of threads: 4
+04: Micro benchmark. Parameters: 
+04: 	Key per txn: 10
+04: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+04: Normal queue mode
+04: Using Paxos replication!
+04: Completed 0 txns/sec, 0 transaction restart, 0  second 
+04: Completed 0 txns/sec, 0 transaction restart, 1  second 
+04: Completed 0 txns/sec, 0 transaction restart, 2  second 
+05: General params: 
+05: 	Distribute txn percent: 0
+05: 	Dependent txn percent: 0
+05: 	Max batch size: 10
+05: 	Num of threads: 4
+05: Micro benchmark. Parameters: 
+05: 	Key per txn: 10
+05: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+05: Normal queue mode
+05: Using Paxos replication!
+06: General params: 
+06: 	Distribute txn percent: 0
+06: 	Dependent txn percent: 0
+06: 	Max batch size: 10
+06: 	Num of threads: 4
+06: Micro benchmark. Parameters: 
+06: 	Key per txn: 10
+06: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+01: Completed 0 txns/sec, 0 transaction restart, 8  second 
+02: Completed 0 txns/sec, 0 transaction restart, 8  second 
+03: Completed 0 txns/sec, 0 transaction restart, 8  second 
+04: Completed 0 txns/sec, 0 transaction restart, 3  second 
+05: Completed 0 txns/sec, 0 transaction restart, 0  second 
+06: Normal queue mode
+06: Using Paxos replication!
+00: Completed 0 txns/sec, 0 transaction restart, 9  second 
+01: Completed 0 txns/sec, 0 transaction restart, 9  second 
+02: Completed 0 txns/sec, 0 transaction restart, 9  second 
+03: Completed 0 txns/sec, 0 transaction restart, 9  second 
+04: Completed 0 txns/sec, 0 transaction restart, 4  second 
+05: Completed 0 txns/sec, 0 transaction restart, 1  second 
+00: Completed 0 txns/sec, 0 transaction restart, 10  second 
+01: Completed 0 txns/sec, 0 transaction restart, 10  second 
+07: General params: 
+07: 	Distribute txn percent: 0
+07: 	Dependent txn percent: 0
+07: 	Max batch size: 10
+07: 	Num of threads: 4
+07: Micro benchmark. Parameters: 
+07: 	Key per txn: 10
+07: 	Per partition #keys: 1000000, index size: 1000, index num: 5
+02: Completed 0 txns/sec, 0 transaction restart, 10  second 
+03: Completed 0 txns/sec, 0 transaction restart, 10  second 
+04: Completed 0 txns/sec, 0 transaction restart, 5  second 
+05: Completed 0 txns/sec, 0 transaction restart, 2  second 
+00: Completed 0 txns/sec, 0 transaction restart, 11  second 
+01: Completed 0 txns/sec, 0 transaction restart, 11  second 
+02: Completed 0 txns/sec, 0 transaction restart, 11  second 
+03: Completed 0 txns/sec, 0 transaction restart, 11  second 
+04: Completed 0 txns/sec, 0 transaction restart, 6  second 
+05: Completed 0 txns/sec, 0 transaction restart, 3  second 
+07: Normal queue mode
+07: Using Paxos replication!
+06: Completed 0 txns/sec, 0 transaction restart, 0  second 
+00: Completed 0 txns/sec, 0 transaction restart, 12  second 
+01: Completed 0 txns/sec, 0 transaction restart, 12  second 
+02: Completed 0 txns/sec, 0 transaction restart, 12  second 
+03: Completed 0 txns/sec, 0 transaction restart, 12  second 
+04: Completed 0 txns/sec, 0 transaction restart, 7  second 
+05: Completed 0 txns/sec, 0 transaction restart, 4  second 
+06: Completed 0 txns/sec, 0 transaction restart, 1  second 
+00: Completed 0 txns/sec, 0 transaction restart, 13  second 
+01: Completed 19.9821 txns/sec, 0 transaction restart, 13  second 
+02: Completed 19.9843 txns/sec, 0 transaction restart, 13  second 
+03: Completed 19.9799 txns/sec, 0 transaction restart, 13  second 
+04: Completed 19.9873 txns/sec, 0 transaction restart, 8  second 
+05: Completed 19.9956 txns/sec, 0 transaction restart, 5  second 
+06: Completed 19.988 txns/sec, 0 transaction restart, 2  second 
+00: Completed 19.9894 txns/sec, 0 transaction restart, 14  second 
+01: Completed 0 txns/sec, 0 transaction restart, 14  second 
+02: Completed 0 txns/sec, 0 transaction restart, 14  second 
+03: Completed 0 txns/sec, 0 transaction restart, 14  second 
+04: Completed 0 txns/sec, 0 transaction restart, 9  second 
+05: Completed 0 txns/sec, 0 transaction restart, 6  second 
+07: Completed 19.9875 txns/sec, 0 transaction restart, 0  second 
+06: Completed 0 txns/sec, 0 transaction restart, 3  second 
+00: Completed 0 txns/sec, 0 transaction restart, 15  second 
+01: Completed 0 txns/sec, 0 transaction restart, 15  second 
+02: Completed 0 txns/sec, 0 transaction restart, 15  second 
+03: Completed 0 txns/sec, 0 transaction restart, 15  second 
+04: Completed 0 txns/sec, 0 transaction restart, 10  second 
+05: Completed 0 txns/sec, 0 transaction restart, 7  second 
+06: Completed 0 txns/sec, 0 transaction restart, 4  second 
+07: Completed 0 txns/sec, 0 transaction restart, 1  second 
+00: Completed 0 txns/sec, 0 transaction restart, 16  second 
+01: Completed 0 txns/sec, 0 transaction restart, 16  second 
+02: Completed 0 txns/sec, 0 transaction restart, 16  second 
+03: Completed 0 txns/sec, 0 transaction restart, 16  second 
+04: Completed 0 txns/sec, 0 transaction restart, 11  second 
+05: Completed 0 txns/sec, 0 transaction restart, 8  second 
+06: Completed 0 txns/sec, 0 transaction restart, 5  second 
+07: Completed 0 txns/sec, 0 transaction restart, 2  second 
+00: Completed 0 txns/sec, 0 transaction restart, 17  second 
+01: Completed 0 txns/sec, 0 transaction restart, 17  second 
+02: Completed 0 txns/sec, 0 transaction restart, 17  second 
+03: Completed 0 txns/sec, 0 transaction restart, 17  second 
+04: Completed 0 txns/sec, 0 transaction restart, 12  second 
+05: Completed 0 txns/sec, 0 transaction restart, 9  second 
+06: Completed 0 txns/sec, 0 transaction restart, 6  second 
+07: Completed 0 txns/sec, 0 transaction restart, 3  second 
+00: Completed 0 txns/sec, 0 transaction restart, 18  second 
+01: Completed 0 txns/sec, 0 transaction restart, 18  second 
+02: Completed 0 txns/sec, 0 transaction restart, 18  second 
+03: Completed 0 txns/sec, 0 transaction restart, 18  second 
+04: Completed 0 txns/sec, 0 transaction restart, 13  second 
+05: Completed 0 txns/sec, 0 transaction restart, 10  second 
+06: Completed 0 txns/sec, 0 transaction restart, 7  second 
+07: Completed 0 txns/sec, 0 transaction restart, 4  second 
+00: Completed 0 txns/sec, 0 transaction restart, 19  second 
+01: Completed 0 txns/sec, 0 transaction restart, 19  second 
+02: Completed 0 txns/sec, 0 transaction restart, 19  second 
+03: Completed 0 txns/sec, 0 transaction restart, 19  second 
+04: Completed 0 txns/sec, 0 transaction restart, 14  second 
+05: Completed 0 txns/sec, 0 transaction restart, 11  second 
+06: Completed 0 txns/sec, 0 transaction restart, 8  second 
+07: Completed 0 txns/sec, 0 transaction restart, 5  second 
+00: Completed 0 txns/sec, 0 transaction restart, 20  second 
+01: Completed 0 txns/sec, 0 transaction restart, 20  second 
+02: Completed 0 txns/sec, 0 transaction restart, 20  second 
+03: Completed 0 txns/sec, 0 transaction restart, 20  second 
+04: Completed 0 txns/sec, 0 transaction restart, 15  second 
+05: Completed 0 txns/sec, 0 transaction restart, 12  second 
+06: Completed 0 txns/sec, 0 transaction restart, 9  second 
+07: Completed 0 txns/sec, 0 transaction restart, 6  second 
+00: Completed 0 txns/sec, 0 transaction restart, 21  second 
+01: Completed 0 txns/sec, 0 transaction restart, 21  second 
+02: Completed 0 txns/sec, 0 transaction restart, 21  second 
+03: Completed 0 txns/sec, 0 transaction restart, 21  second 
+04: Completed 0 txns/sec, 0 transaction restart, 16  second 
+05: Completed 0 txns/sec, 0 transaction restart, 13  second 
+06: Completed 0 txns/sec, 0 transaction restart, 10  second 
+07: Completed 0 txns/sec, 0 transaction restart, 7  second 
+00: Completed 0 txns/sec, 0 transaction restart, 22  second 
+01: Completed 0 txns/sec, 0 transaction restart, 22  second 
+02: Completed 0 txns/sec, 0 transaction restart, 22  second 
+03: Completed 0 txns/sec, 0 transaction restart, 22  second 
+04: Completed 0 txns/sec, 0 transaction restart, 17  second 
+05: Completed 0 txns/sec, 0 transaction restart, 14  second 
+06: Completed 0 txns/sec, 0 transaction restart, 11  second 
+07: Completed 0 txns/sec, 0 transaction restart, 8  second 
+00: Completed 0 txns/sec, 0 transaction restart, 23  second 
+01: Completed 0 txns/sec, 0 transaction restart, 23  second 
+02: Completed 0 txns/sec, 0 transaction restart, 23  second 
+03: Completed 0 txns/sec, 0 transaction restart, 23  second 
+04: Completed 0 txns/sec, 0 transaction restart, 18  second 
+05: Completed 0 txns/sec, 0 transaction restart, 15  second 
+06: Completed 0 txns/sec, 0 transaction restart, 12  second 
+07: Completed 0 txns/sec, 0 transaction restart, 9  second 
+00: Completed 0 txns/sec, 0 transaction restart, 24  second 
+01: Completed 0 txns/sec, 0 transaction restart, 24  second 
+02: Completed 0 txns/sec, 0 transaction restart, 24  second 
+03: Completed 0 txns/sec, 0 transaction restart, 24  second 
+04: Completed 0 txns/sec, 0 transaction restart, 19  second 
+05: Completed 0 txns/sec, 0 transaction restart, 16  second 
+06: Completed 0 txns/sec, 0 transaction restart, 13  second 
+07: Completed 0 txns/sec, 0 transaction restart, 10  second 
+00: Completed 0 txns/sec, 0 transaction restart, 25  second 
+01: Completed 0 txns/sec, 0 transaction restart, 25  second 
+02: Completed 0 txns/sec, 0 transaction restart, 25  second 
+03: Completed 0 txns/sec, 0 transaction restart, 25  second 
+04: Completed 0 txns/sec, 0 transaction restart, 20  second 
+05: Completed 0 txns/sec, 0 transaction restart, 17  second 
+06: Completed 0 txns/sec, 0 transaction restart, 14  second 
+07: Completed 0 txns/sec, 0 transaction restart, 11  second 
+00: Completed 0 txns/sec, 0 transaction restart, 26  second 
+01: Completed 0 txns/sec, 0 transaction restart, 26  second 
+02: Completed 0 txns/sec, 0 transaction restart, 26  second 
+03: Completed 0 txns/sec, 0 transaction restart, 26  second 
+04: Completed 0 txns/sec, 0 transaction restart, 21  second 
+05: Completed 0 txns/sec, 0 transaction restart, 18  second 
+06: Completed 0 txns/sec, 0 transaction restart, 15  second 
+07: Completed 0 txns/sec, 0 transaction restart, 12  second 
+00: Completed 0 txns/sec, 0 transaction restart, 27  second 
+01: Completed 0 txns/sec, 0 transaction restart, 27  second 
+02: Completed 0 txns/sec, 0 transaction restart, 27  second 
+03: Completed 0 txns/sec, 0 transaction restart, 27  second 
+04: Completed 0 txns/sec, 0 transaction restart, 22  second 
+05: Completed 0 txns/sec, 0 transaction restart, 19  second 
+06: Completed 0 txns/sec, 0 transaction restart, 16  second 
+07: Completed 0 txns/sec, 0 transaction restart, 13  second 
+00: Completed 0 txns/sec, 0 transaction restart, 28  second 
+01: Completed 0 txns/sec, 0 transaction restart, 28  second 
+02: Completed 0 txns/sec, 0 transaction restart, 28  second 
+03: Completed 0 txns/sec, 0 transaction restart, 28  second 
+04: Completed 0 txns/sec, 0 transaction restart, 23  second 
+05: Completed 0 txns/sec, 0 transaction restart, 20  second 
+06: Completed 0 txns/sec, 0 transaction restart, 17  second 
+07: Completed 0 txns/sec, 0 transaction restart, 14  second 
+00: Completed 0 txns/sec, 0 transaction restart, 29  second 
+01: Completed 0 txns/sec, 0 transaction restart, 29  second 
+02: Completed 0 txns/sec, 0 transaction restart, 29  second 
+03: Completed 0 txns/sec, 0 transaction restart, 29  second 
+04: Completed 0 txns/sec, 0 transaction restart, 24  second 
+05: Completed 0 txns/sec, 0 transaction restart, 21  second 
+06: Completed 0 txns/sec, 0 transaction restart, 18  second 
+07: Completed 0 txns/sec, 0 transaction restart, 15  second 
+00: Completed 0 txns/sec, 0 transaction restart, 30  second 
+01: Completed 0 txns/sec, 0 transaction restart, 30  second 
+02: Completed 0 txns/sec, 0 transaction restart, 30  second 
+03: Completed 0 txns/sec, 0 transaction restart, 30  second 
+04: Completed 0 txns/sec, 0 transaction restart, 25  second 
+05: Completed 0 txns/sec, 0 transaction restart, 22  second 
+06: Completed 0 txns/sec, 0 transaction restart, 19  second 
+07: Completed 0 txns/sec, 0 transaction restart, 16  second 
+00: Completed 0 txns/sec, 0 transaction restart, 31  second 
+01: Completed 0 txns/sec, 0 transaction restart, 31  second 
+02: Completed 0 txns/sec, 0 transaction restart, 31  second 
+03: Completed 0 txns/sec, 0 transaction restart, 31  second 
+04: Completed 0 txns/sec, 0 transaction restart, 26  second 
+05: Completed 0 txns/sec, 0 transaction restart, 23  second 
+06: Completed 0 txns/sec, 0 transaction restart, 20  second 
+07: Completed 0 txns/sec, 0 transaction restart, 17  second 
+00: Completed 0 txns/sec, 0 transaction restart, 32  second 
+01: Completed 0 txns/sec, 0 transaction restart, 32  second 
+02: Completed 0 txns/sec, 0 transaction restart, 32  second 
+03: Completed 0 txns/sec, 0 transaction restart, 32  second 
+04: Completed 0 txns/sec, 0 transaction restart, 27  second 
+05: Completed 0 txns/sec, 0 transaction restart, 24  second 
+06: Completed 0 txns/sec, 0 transaction restart, 21  second 
+07: Completed 0 txns/sec, 0 transaction restart, 18  second 
+00: Completed 0 txns/sec, 0 transaction restart, 33  second 
+01: Completed 0 txns/sec, 0 transaction restart, 33  second 
+02: Completed 0 txns/sec, 0 transaction restart, 33  second 
+03: Completed 0 txns/sec, 0 transaction restart, 33  second 
+04: Completed 0 txns/sec, 0 transaction restart, 28  second 
+05: Completed 0 txns/sec, 0 transaction restart, 25  second 
+06: Completed 0 txns/sec, 0 transaction restart, 22  second 
+07: Completed 0 txns/sec, 0 transaction restart, 19  second 
+00: Completed 0 txns/sec, 0 transaction restart, 34  second 
+01: Completed 0 txns/sec, 0 transaction restart, 34  second 
+02: Completed 0 txns/sec, 0 transaction restart, 34  second 
+03: Completed 0 txns/sec, 0 transaction restart, 34  second 
+04: Completed 0 txns/sec, 0 transaction restart, 29  second 
+05: Completed 0 txns/sec, 0 transaction restart, 26  second 
+06: Completed 0 txns/sec, 0 transaction restart, 23  second 
+07: Completed 0 txns/sec, 0 transaction restart, 20  second 
+00: Completed 0 txns/sec, 0 transaction restart, 35  second 
+01: Completed 0 txns/sec, 0 transaction restart, 35  second 
+02: Completed 0 txns/sec, 0 transaction restart, 35  second 
+03: Completed 0 txns/sec, 0 transaction restart, 35  second 
+04: Completed 0 txns/sec, 0 transaction restart, 30  second 
+05: Completed 0 txns/sec, 0 transaction restart, 27  second 
+06: Completed 0 txns/sec, 0 transaction restart, 24  second 
+07: Completed 0 txns/sec, 0 transaction restart, 21  second 
+00: Completed 0 txns/sec, 0 transaction restart, 36  second 
+01: Completed 0 txns/sec, 0 transaction restart, 36  second 
+02: Completed 0 txns/sec, 0 transaction restart, 36  second 
+03: Completed 0 txns/sec, 0 transaction restart, 36  second 
+04: Completed 0 txns/sec, 0 transaction restart, 31  second 
+05: Completed 0 txns/sec, 0 transaction restart, 28  second 
+06: Completed 0 txns/sec, 0 transaction restart, 25  second 
+07: Completed 0 txns/sec, 0 transaction restart, 22  second 
+00: Completed 0 txns/sec, 0 transaction restart, 37  second 
+01: Completed 0 txns/sec, 0 transaction restart, 37  second 
+02: Completed 0 txns/sec, 0 transaction restart, 37  second 
+03: Completed 0 txns/sec, 0 transaction restart, 37  second 
+04: Completed 0 txns/sec, 0 transaction restart, 32  second 
+05: Completed 0 txns/sec, 0 transaction restart, 29  second 
+06: Completed 0 txns/sec, 0 transaction restart, 26  second 
+07: Completed 0 txns/sec, 0 transaction restart, 23  second 
+00: Completed 0 txns/sec, 0 transaction restart, 38  second 
+01: Completed 0 txns/sec, 0 transaction restart, 38  second 
+02: Completed 0 txns/sec, 0 transaction restart, 38  second 
+03: Completed 0 txns/sec, 0 transaction restart, 38  second 
+04: Completed 0 txns/sec, 0 transaction restart, 33  second 
+05: Completed 0 txns/sec, 0 transaction restart, 30  second 
+06: Completed 0 txns/sec, 0 transaction restart, 27  second 
+07: Completed 0 txns/sec, 0 transaction restart, 24  second 
+00: Completed 0 txns/sec, 0 transaction restart, 39  second 
+01: Completed 0 txns/sec, 0 transaction restart, 39  second 
+02: Completed 0 txns/sec, 0 transaction restart, 39  second 
+03: Completed 0 txns/sec, 0 transaction restart, 39  second 
+04: Completed 0 txns/sec, 0 transaction restart, 34  second 
+05: Completed 0 txns/sec, 0 transaction restart, 31  second 
+06: Completed 0 txns/sec, 0 transaction restart, 28  second 
+07: Completed 0 txns/sec, 0 transaction restart, 25  second 
+00: Completed 0 txns/sec, 0 transaction restart, 40  second 
+01: Completed 0 txns/sec, 0 transaction restart, 40  second 
+02: Completed 0 txns/sec, 0 transaction restart, 40  second 
+03: Completed 0 txns/sec, 0 transaction restart, 40  second 
+04: Completed 0 txns/sec, 0 transaction restart, 35  second 
+05: Completed 0 txns/sec, 0 transaction restart, 32  second 
+06: Completed 0 txns/sec, 0 transaction restart, 29  second 
+00: Completed 0 txns/sec, 0 transaction restart, 41  second 
+07: Completed 0 txns/sec, 0 transaction restart, 26  second 
+01: Completed 0 txns/sec, 0 transaction restart, 41  second 
+02: Completed 0 txns/sec, 0 transaction restart, 41  second 
+03: Completed 0 txns/sec, 0 transaction restart, 41  second 
+04: Completed 0 txns/sec, 0 transaction restart, 36  second 
+05: Completed 0 txns/sec, 0 transaction restart, 33  second 
+06: Completed 0 txns/sec, 0 transaction restart, 30  second 
+00: Completed 0 txns/sec, 0 transaction restart, 42  second 
+07: Completed 0 txns/sec, 0 transaction restart, 27  second 
+01: Completed 0 txns/sec, 0 transaction restart, 42  second 
+02: Completed 0 txns/sec, 0 transaction restart, 42  second 
+03: Completed 0 txns/sec, 0 transaction restart, 42  second 
+04: Completed 0 txns/sec, 0 transaction restart, 37  second 
+05: Completed 0 txns/sec, 0 transaction restart, 34  second 
+06: Completed 0 txns/sec, 0 transaction restart, 31  second 
+00: Completed 0 txns/sec, 0 transaction restart, 43  second 
+07: Completed 0 txns/sec, 0 transaction restart, 28  second 
+01: Completed 0 txns/sec, 0 transaction restart, 43  second 
+02: Completed 0 txns/sec, 0 transaction restart, 43  second 
+03: Completed 0 txns/sec, 0 transaction restart, 43  second 
+04: Completed 0 txns/sec, 0 transaction restart, 38  second 
+05: Completed 0 txns/sec, 0 transaction restart, 35  second 
+06: Completed 0 txns/sec, 0 transaction restart, 32  second 
+00: Completed 0 txns/sec, 0 transaction restart, 44  second 
+07: Completed 0 txns/sec, 0 transaction restart, 29  second 
+01: Completed 0 txns/sec, 0 transaction restart, 44  second 
+02: Completed 0 txns/sec, 0 transaction restart, 44  second 
+03: Completed 0 txns/sec, 0 transaction restart, 44  second 
+05: Completed 0 txns/sec, 0 transaction restart, 36  second 
+04: Completed 0 txns/sec, 0 transaction restart, 39  second 
+06: Completed 0 txns/sec, 0 transaction restart, 33  second 
+00: Completed 0 txns/sec, 0 transaction restart, 45  second 
+07: Completed 0 txns/sec, 0 transaction restart, 30  second 
+01: Completed 0 txns/sec, 0 transaction restart, 45  second 
+02: Completed 0 txns/sec, 0 transaction restart, 45  second 
+03: Completed 0 txns/sec, 0 transaction restart, 45  second 
+05: Completed 0 txns/sec, 0 transaction restart, 37  second 
+04: Completed 0 txns/sec, 0 transaction restart, 40  second 
+06: Completed 0 txns/sec, 0 transaction restart, 34  second 
+00: Completed 0 txns/sec, 0 transaction restart, 46  second 
+07: Completed 0 txns/sec, 0 transaction restart, 31  second 
+01: Completed 0 txns/sec, 0 transaction restart, 46  second 
+02: Completed 0 txns/sec, 0 transaction restart, 46  second 
+03: Completed 0 txns/sec, 0 transaction restart, 46  second 
+05: Completed 0 txns/sec, 0 transaction restart, 38  second 
+04: Completed 0 txns/sec, 0 transaction restart, 41  second 
+06: Completed 0 txns/sec, 0 transaction restart, 35  second 
+00: Completed 0 txns/sec, 0 transaction restart, 47  second 
+07: Completed 0 txns/sec, 0 transaction restart, 32  second 
+01: Completed 0 txns/sec, 0 transaction restart, 47  second 
+02: Completed 0 txns/sec, 0 transaction restart, 47  second 
+03: Completed 0 txns/sec, 0 transaction restart, 47  second 
+05: Completed 0 txns/sec, 0 transaction restart, 39  second 
+04: Completed 0 txns/sec, 0 transaction restart, 42  second 
+06: Completed 0 txns/sec, 0 transaction restart, 36  second 
+00: Completed 0 txns/sec, 0 transaction restart, 48  second 
+07: Completed 0 txns/sec, 0 transaction restart, 33  second 
+01: Completed 0 txns/sec, 0 transaction restart, 48  second 
+02: Completed 0 txns/sec, 0 transaction restart, 48  second 
+03: Completed 0 txns/sec, 0 transaction restart, 48  second 
+05: Completed 0 txns/sec, 0 transaction restart, 40  second 
+04: Completed 0 txns/sec, 0 transaction restart, 43  second 
+06: Completed 0 txns/sec, 0 transaction restart, 37  second 
+00: Completed 0 txns/sec, 0 transaction restart, 49  second 
+07: Completed 0 txns/sec, 0 transaction restart, 34  second 
+01: Completed 0 txns/sec, 0 transaction restart, 49  second 
+02: Completed 0 txns/sec, 0 transaction restart, 49  second 
+03: Completed 0 txns/sec, 0 transaction restart, 49  second 
+05: Completed 0 txns/sec, 0 transaction restart, 41  second 
+04: Completed 0 txns/sec, 0 transaction restart, 44  second 
+06: Completed 0 txns/sec, 0 transaction restart, 38  second 
+00: Completed 0 txns/sec, 0 transaction restart, 50  second 
+07: Completed 0 txns/sec, 0 transaction restart, 35  second 
+01: Completed 0 txns/sec, 0 transaction restart, 50  second 
+02: Completed 0 txns/sec, 0 transaction restart, 50  second 
+03: Completed 0 txns/sec, 0 transaction restart, 50  second 
+05: Completed 0 txns/sec, 0 transaction restart, 42  second 
+04: Completed 0 txns/sec, 0 transaction restart, 45  second 
+06: Completed 0 txns/sec, 0 transaction restart, 39  second 
+00: Completed 0 txns/sec, 0 transaction restart, 51  second 
+07: Completed 0 txns/sec, 0 transaction restart, 36  second 
+01: Completed 0 txns/sec, 0 transaction restart, 51  second 
+02: Completed 0 txns/sec, 0 transaction restart, 51  second 
+03: Completed 0 txns/sec, 0 transaction restart, 51  second 
+05: Completed 0 txns/sec, 0 transaction restart, 43  second 
+04: Completed 0 txns/sec, 0 transaction restart, 46  second 
+06: Completed 0 txns/sec, 0 transaction restart, 40  second 
+00: Completed 0 txns/sec, 0 transaction restart, 52  second 
+07: Completed 0 txns/sec, 0 transaction restart, 37  second 
+01: Completed 0 txns/sec, 0 transaction restart, 52  second 
+02: Completed 0 txns/sec, 0 transaction restart, 52  second 
+03: Completed 0 txns/sec, 0 transaction restart, 52  second 
+05: Completed 0 txns/sec, 0 transaction restart, 44  second 
+04: Completed 0 txns/sec, 0 transaction restart, 47  second 
+06: Completed 0 txns/sec, 0 transaction restart, 41  second 
+00: Completed 0 txns/sec, 0 transaction restart, 53  second 
+07: Completed 0 txns/sec, 0 transaction restart, 38  second 
+01: Completed 0 txns/sec, 0 transaction restart, 53  second 
+02: Completed 0 txns/sec, 0 transaction restart, 53  second 
+03: Completed 0 txns/sec, 0 transaction restart, 53  second 
+05: Completed 0 txns/sec, 0 transaction restart, 45  second 
+04: Completed 0 txns/sec, 0 transaction restart, 48  second 
+06: Completed 0 txns/sec, 0 transaction restart, 42  second 
+00: Completed 0 txns/sec, 0 transaction restart, 54  second 
+07: Completed 0 txns/sec, 0 transaction restart, 39  second 
+01: Completed 0 txns/sec, 0 transaction restart, 54  second 
+02: Completed 0 txns/sec, 0 transaction restart, 54  second 
+03: Completed 0 txns/sec, 0 transaction restart, 54  second 
+05: Completed 0 txns/sec, 0 transaction restart, 46  second 
+04: Completed 0 txns/sec, 0 transaction restart, 49  second 
+06: Completed 0 txns/sec, 0 transaction restart, 43  second 
+00: Completed 0 txns/sec, 0 transaction restart, 55  second 
+07: Completed 0 txns/sec, 0 transaction restart, 40  second 
+01: Completed 0 txns/sec, 0 transaction restart, 55  second 
+02: Completed 0 txns/sec, 0 transaction restart, 55  second 
+03: Completed 0 txns/sec, 0 transaction restart, 55  second 
+05: Completed 0 txns/sec, 0 transaction restart, 47  second 
+04: Completed 0 txns/sec, 0 transaction restart, 50  second 
+06: Completed 0 txns/sec, 0 transaction restart, 44  second 
+00: Completed 0 txns/sec, 0 transaction restart, 56  second 
+07: Completed 0 txns/sec, 0 transaction restart, 41  second 
+01: Completed 0 txns/sec, 0 transaction restart, 56  second 
+02: Completed 0 txns/sec, 0 transaction restart, 56  second 
+03: Completed 0 txns/sec, 0 transaction restart, 56  second 
+05: Completed 0 txns/sec, 0 transaction restart, 48  second 
+04: Completed 0 txns/sec, 0 transaction restart, 51  second 
+06: Completed 0 txns/sec, 0 transaction restart, 45  second 
+00: Completed 0 txns/sec, 0 transaction restart, 57  second 
+07: Completed 0 txns/sec, 0 transaction restart, 42  second 
+01: Completed 0 txns/sec, 0 transaction restart, 57  second 
+02: Completed 0 txns/sec, 0 transaction restart, 57  second 
+03: Completed 0 txns/sec, 0 transaction restart, 57  second 
+05: Completed 0 txns/sec, 0 transaction restart, 49  second 
+04: Completed 0 txns/sec, 0 transaction restart, 52  second 
+06: Completed 0 txns/sec, 0 transaction restart, 46  second 
+00: Completed 0 txns/sec, 0 transaction restart, 58  second 
+07: Completed 0 txns/sec, 0 transaction restart, 43  second 
+01: Completed 0 txns/sec, 0 transaction restart, 58  second 
+02: Completed 0 txns/sec, 0 transaction restart, 58  second 
+03: Completed 0 txns/sec, 0 transaction restart, 58  second 
+05: Completed 0 txns/sec, 0 transaction restart, 50  second 
+04: Completed 0 txns/sec, 0 transaction restart, 53  second 
+06: Completed 0 txns/sec, 0 transaction restart, 47  second 
+00: Completed 0 txns/sec, 0 transaction restart, 59  second 
+07: Completed 0 txns/sec, 0 transaction restart, 44  second 
+01: Completed 0 txns/sec, 0 transaction restart, 59  second 
+02: Completed 0 txns/sec, 0 transaction restart, 59  second 
+03: Completed 0 txns/sec, 0 transaction restart, 59  second 
+05: Completed 0 txns/sec, 0 transaction restart, 51  second 
+04: Completed 0 txns/sec, 0 transaction restart, 54  second 
+06: Completed 0 txns/sec, 0 transaction restart, 48  second 
+00: Completed 0 txns/sec, 0 transaction restart, 60  second 
+07: Completed 0 txns/sec, 0 transaction restart, 45  second 
+01: Completed 0 txns/sec, 0 transaction restart, 60  second 
+02: Completed 0 txns/sec, 0 transaction restart, 60  second 
+03: Completed 0 txns/sec, 0 transaction restart, 60  second 
+05: Completed 0 txns/sec, 0 transaction restart, 52  second 
+04: Completed 0 txns/sec, 0 transaction restart, 55  second 
+06: Completed 0 txns/sec, 0 transaction restart, 49  second 
+00: Completed 0 txns/sec, 0 transaction restart, 61  second 
+07: Completed 0 txns/sec, 0 transaction restart, 46  second 
+01: Completed 0 txns/sec, 0 transaction restart, 61  second 
+02: Completed 0 txns/sec, 0 transaction restart, 61  second 
+03: Completed 0 txns/sec, 0 transaction restart, 61  second 
+05: Completed 0 txns/sec, 0 transaction restart, 53  second 
+04: Completed 0 txns/sec, 0 transaction restart, 56  second 
+06: Completed 0 txns/sec, 0 transaction restart, 50  second 
+00: Completed 0 txns/sec, 0 transaction restart, 62  second 
+07: Completed 0 txns/sec, 0 transaction restart, 47  second 
+01: Completed 0 txns/sec, 0 transaction restart, 62  second 
+02: Completed 0 txns/sec, 0 transaction restart, 62  second 
+03: Completed 0 txns/sec, 0 transaction restart, 62  second 
+05: Completed 0 txns/sec, 0 transaction restart, 54  second 
+04: Completed 0 txns/sec, 0 transaction restart, 57  second 
+06: Completed 0 txns/sec, 0 transaction restart, 51  second 
+00: Completed 0 txns/sec, 0 transaction restart, 63  second 
+07: Completed 0 txns/sec, 0 transaction restart, 48  second 
+01: Completed 0 txns/sec, 0 transaction restart, 63  second 
+02: Completed 0 txns/sec, 0 transaction restart, 63  second 
+03: Completed 0 txns/sec, 0 transaction restart, 63  second 
+05: Completed 0 txns/sec, 0 transaction restart, 55  second 
+04: Completed 0 txns/sec, 0 transaction restart, 58  second 
+06: Completed 0 txns/sec, 0 transaction restart, 52  second 
+00: Completed 0 txns/sec, 0 transaction restart, 64  second 
+07: Completed 0 txns/sec, 0 transaction restart, 49  second 
+01: Completed 0 txns/sec, 0 transaction restart, 64  second 
+02: Completed 0 txns/sec, 0 transaction restart, 64  second 
+03: Completed 0 txns/sec, 0 transaction restart, 64  second 
+05: Completed 0 txns/sec, 0 transaction restart, 56  second 
+04: Completed 0 txns/sec, 0 transaction restart, 59  second 
+06: Completed 0 txns/sec, 0 transaction restart, 53  second 
+00: Completed 0 txns/sec, 0 transaction restart, 65  second 
+07: Completed 0 txns/sec, 0 transaction restart, 50  second 
+01: Completed 0 txns/sec, 0 transaction restart, 65  second 
+02: Completed 0 txns/sec, 0 transaction restart, 65  second 
+03: Completed 0 txns/sec, 0 transaction restart, 65  second 
+05: Completed 0 txns/sec, 0 transaction restart, 57  second 
+04: Completed 0 txns/sec, 0 transaction restart, 60  second 
+06: Completed 0 txns/sec, 0 transaction restart, 54  second 
+00: Completed 0 txns/sec, 0 transaction restart, 66  second 
+07: Completed 0 txns/sec, 0 transaction restart, 51  second 
+01: Completed 0 txns/sec, 0 transaction restart, 66  second 
+02: Completed 0 txns/sec, 0 transaction restart, 66  second 
+03: Completed 0 txns/sec, 0 transaction restart, 66  second 
+05: Completed 0 txns/sec, 0 transaction restart, 58  second 
+04: Completed 0 txns/sec, 0 transaction restart, 61  second 
+06: Completed 0 txns/sec, 0 transaction restart, 55  second 
+00: Completed 0 txns/sec, 0 transaction restart, 67  second 
+07: Completed 0 txns/sec, 0 transaction restart, 52  second 
+01: Completed 0 txns/sec, 0 transaction restart, 67  second 
+02: Completed 0 txns/sec, 0 transaction restart, 67  second 
+03: Completed 0 txns/sec, 0 transaction restart, 67  second 
+05: Completed 0 txns/sec, 0 transaction restart, 59  second 
+04: Completed 0 txns/sec, 0 transaction restart, 62  second 
+06: Completed 0 txns/sec, 0 transaction restart, 56  second 
+00: Completed 0 txns/sec, 0 transaction restart, 68  second 
+07: Completed 0 txns/sec, 0 transaction restart, 53  second 
+01: Completed 0 txns/sec, 0 transaction restart, 68  second 
+02: Completed 0 txns/sec, 0 transaction restart, 68  second 
+03: Completed 0 txns/sec, 0 transaction restart, 68  second 
+05: Completed 0 txns/sec, 0 transaction restart, 60  second 
+04: Completed 0 txns/sec, 0 transaction restart, 63  second 
+06: Completed 0 txns/sec, 0 transaction restart, 57  second 
+00: Completed 0 txns/sec, 0 transaction restart, 69  second 
+07: Completed 0 txns/sec, 0 transaction restart, 54  second 
+01: Completed 0 txns/sec, 0 transaction restart, 69  second 
+02: Completed 0 txns/sec, 0 transaction restart, 69  second 
+03: Completed 0 txns/sec, 0 transaction restart, 69  second 
+05: Completed 0 txns/sec, 0 transaction restart, 61  second 
+04: Completed 0 txns/sec, 0 transaction restart, 64  second 
+06: Completed 0 txns/sec, 0 transaction restart, 58  second 
+00: Completed 0 txns/sec, 0 transaction restart, 70  second 
+07: Completed 0 txns/sec, 0 transaction restart, 55  second 
+01: Completed 0 txns/sec, 0 transaction restart, 70  second 
+02: Completed 0 txns/sec, 0 transaction restart, 70  second 
+03: Completed 0 txns/sec, 0 transaction restart, 70  second 
+05: Completed 0 txns/sec, 0 transaction restart, 62  second 
+04: Completed 0 txns/sec, 0 transaction restart, 65  second 
+06: Completed 0 txns/sec, 0 transaction restart, 59  second 
+00: Completed 0 txns/sec, 0 transaction restart, 71  second 
+07: Completed 0 txns/sec, 0 transaction restart, 56  second 
+01: Completed 0 txns/sec, 0 transaction restart, 71  second 
+02: Completed 0 txns/sec, 0 transaction restart, 71  second 
+03: Completed 0 txns/sec, 0 transaction restart, 71  second 
+05: Completed 0 txns/sec, 0 transaction restart, 63  second 
+04: Completed 0 txns/sec, 0 transaction restart, 66  second 
+06: Completed 0 txns/sec, 0 transaction restart, 60  second 
+00: Completed 0 txns/sec, 0 transaction restart, 72  second 
+07: Completed 0 txns/sec, 0 transaction restart, 57  second 
+01: Completed 0 txns/sec, 0 transaction restart, 72  second 
+02: Completed 0 txns/sec, 0 transaction restart, 72  second 
+03: Completed 0 txns/sec, 0 transaction restart, 72  second 
+05: Completed 0 txns/sec, 0 transaction restart, 64  second 
+04: Completed 0 txns/sec, 0 transaction restart, 67  second 
+06: Completed 0 txns/sec, 0 transaction restart, 61  second 
+00: Completed 0 txns/sec, 0 transaction restart, 73  second 
+07: Completed 0 txns/sec, 0 transaction restart, 58  second 
+01: Completed 0 txns/sec, 0 transaction restart, 73  second 
+02: Completed 0 txns/sec, 0 transaction restart, 73  second 
+03: Completed 0 txns/sec, 0 transaction restart, 73  second 
+05: Completed 0 txns/sec, 0 transaction restart, 65  second 
+04: Completed 0 txns/sec, 0 transaction restart, 68  second 
+06: Completed 0 txns/sec, 0 transaction restart, 62  second 
+00: Completed 0 txns/sec, 0 transaction restart, 74  second 
+07: Completed 0 txns/sec, 0 transaction restart, 59  second 
+01: Completed 0 txns/sec, 0 transaction restart, 74  second 
+02: Completed 0 txns/sec, 0 transaction restart, 74  second 
+03: Completed 0 txns/sec, 0 transaction restart, 74  second 
+05: Completed 0 txns/sec, 0 transaction restart, 66  second 
+04: Completed 0 txns/sec, 0 transaction restart, 69  second 
+06: Completed 0 txns/sec, 0 transaction restart, 63  second 
+00: Completed 0 txns/sec, 0 transaction restart, 75  second 
+07: Completed 0 txns/sec, 0 transaction restart, 60  second 
+01: Completed 0 txns/sec, 0 transaction restart, 75  second 
+02: Completed 0 txns/sec, 0 transaction restart, 75  second 
+03: Completed 0 txns/sec, 0 transaction restart, 75  second 
+05: Completed 0 txns/sec, 0 transaction restart, 67  second 
+04: Completed 0 txns/sec, 0 transaction restart, 70  second 
+06: Completed 0 txns/sec, 0 transaction restart, 64  second 
+00: Completed 0 txns/sec, 0 transaction restart, 76  second 
+07: Completed 0 txns/sec, 0 transaction restart, 61  second 
+01: Completed 0 txns/sec, 0 transaction restart, 76  second 
+02: Completed 0 txns/sec, 0 transaction restart, 76  second 
+03: Completed 0 txns/sec, 0 transaction restart, 76  second 
+05: Completed 0 txns/sec, 0 transaction restart, 68  second 
+04: Completed 0 txns/sec, 0 transaction restart, 71  second 
+06: Completed 0 txns/sec, 0 transaction restart, 65  second 
+00: Completed 0 txns/sec, 0 transaction restart, 77  second 
+07: Completed 0 txns/sec, 0 transaction restart, 62  second 
+01: Completed 0 txns/sec, 0 transaction restart, 77  second 
+02: Completed 0 txns/sec, 0 transaction restart, 77  second 
+03: Completed 0 txns/sec, 0 transaction restart, 77  second 
+05: Completed 0 txns/sec, 0 transaction restart, 69  second 
+04: Completed 0 txns/sec, 0 transaction restart, 72  second 
+06: Completed 0 txns/sec, 0 transaction restart, 66  second 
+00: Completed 0 txns/sec, 0 transaction restart, 78  second 
+07: Completed 0 txns/sec, 0 transaction restart, 63  second 
+01: Completed 0 txns/sec, 0 transaction restart, 78  second 
+02: Completed 0 txns/sec, 0 transaction restart, 78  second 
+03: Completed 0 txns/sec, 0 transaction restart, 78  second 
+05: Completed 0 txns/sec, 0 transaction restart, 70  second 
+04: Completed 0 txns/sec, 0 transaction restart, 73  second 
+06: Completed 0 txns/sec, 0 transaction restart, 67  second 
+00: Completed 0 txns/sec, 0 transaction restart, 79  second 
+07: Completed 0 txns/sec, 0 transaction restart, 64  second 
+01: Completed 0 txns/sec, 0 transaction restart, 79  second 
+02: Completed 0 txns/sec, 0 transaction restart, 79  second 
+03: Completed 0 txns/sec, 0 transaction restart, 79  second 
+05: Completed 0 txns/sec, 0 transaction restart, 71  second 
+04: Completed 0 txns/sec, 0 transaction restart, 74  second 
+06: Completed 0 txns/sec, 0 transaction restart, 68  second 
+00: Completed 0 txns/sec, 0 transaction restart, 80  second 
+07: Completed 0 txns/sec, 0 transaction restart, 65  second 
+01: Completed 0 txns/sec, 0 transaction restart, 80  second 
+02: Completed 0 txns/sec, 0 transaction restart, 80  second 
+03: Completed 0 txns/sec, 0 transaction restart, 80  second 
+05: Completed 0 txns/sec, 0 transaction restart, 72  second 
+04: Completed 0 txns/sec, 0 transaction restart, 75  second 
+06: Completed 0 txns/sec, 0 transaction restart, 69  second 
+00: Completed 0 txns/sec, 0 transaction restart, 81  second 
+07: Completed 0 txns/sec, 0 transaction restart, 66  second 
+01: Completed 0 txns/sec, 0 transaction restart, 81  second 
+02: Completed 0 txns/sec, 0 transaction restart, 81  second 
+03: Completed 0 txns/sec, 0 transaction restart, 81  second 
+05: Completed 0 txns/sec, 0 transaction restart, 73  second 
+04: Completed 0 txns/sec, 0 transaction restart, 76  second 
+06: Completed 0 txns/sec, 0 transaction restart, 70  second 
+00: Completed 0 txns/sec, 0 transaction restart, 82  second 
+07: Completed 0 txns/sec, 0 transaction restart, 67  second 
+01: Completed 0 txns/sec, 0 transaction restart, 82  second 
+02: Completed 0 txns/sec, 0 transaction restart, 82  second 
+03: Completed 0 txns/sec, 0 transaction restart, 82  second 
+05: Completed 0 txns/sec, 0 transaction restart, 74  second 
+04: Completed 0 txns/sec, 0 transaction restart, 77  second 
+06: Completed 0 txns/sec, 0 transaction restart, 71  second 
+00: Completed 0 txns/sec, 0 transaction restart, 83  second 
+07: Completed 0 txns/sec, 0 transaction restart, 68  second 
+01: Completed 0 txns/sec, 0 transaction restart, 83  second 
+02: Completed 0 txns/sec, 0 transaction restart, 83  second 
+03: Completed 0 txns/sec, 0 transaction restart, 83  second 
+05: Completed 0 txns/sec, 0 transaction restart, 75  second 
+04: Completed 0 txns/sec, 0 transaction restart, 78  second 
+06: Completed 0 txns/sec, 0 transaction restart, 72  second 
+00: Completed 0 txns/sec, 0 transaction restart, 84  second 
+07: Completed 0 txns/sec, 0 transaction restart, 69  second 
+01: Completed 0 txns/sec, 0 transaction restart, 84  second 
+02: Completed 0 txns/sec, 0 transaction restart, 84  second 
+03: Completed 0 txns/sec, 0 transaction restart, 84  second 
+05: Completed 0 txns/sec, 0 transaction restart, 76  second 
+04: Completed 0 txns/sec, 0 transaction restart, 79  second 
+06: Completed 0 txns/sec, 0 transaction restart, 73  second 
+00: Completed 0 txns/sec, 0 transaction restart, 85  second 
+07: Completed 0 txns/sec, 0 transaction restart, 70  second 
+01: Completed 0 txns/sec, 0 transaction restart, 85  second 
+02: Completed 0 txns/sec, 0 transaction restart, 85  second 
+03: Completed 0 txns/sec, 0 transaction restart, 85  second 
+05: Completed 0 txns/sec, 0 transaction restart, 77  second 
+04: Completed 0 txns/sec, 0 transaction restart, 80  second 
+06: Completed 0 txns/sec, 0 transaction restart, 74  second 
+00: Completed 0 txns/sec, 0 transaction restart, 86  second 
+07: Completed 0 txns/sec, 0 transaction restart, 71  second 
+01: Completed 0 txns/sec, 0 transaction restart, 86  second 
+02: Completed 0 txns/sec, 0 transaction restart, 86  second 
+03: Completed 0 txns/sec, 0 transaction restart, 86  second 
+05: Completed 0 txns/sec, 0 transaction restart, 78  second 
+04: Completed 0 txns/sec, 0 transaction restart, 81  second 
+06: Completed 0 txns/sec, 0 transaction restart, 75  second 
+00: Completed 0 txns/sec, 0 transaction restart, 87  second 
+07: Completed 0 txns/sec, 0 transaction restart, 72  second 
+01: Completed 0 txns/sec, 0 transaction restart, 87  second 
+02: Completed 0 txns/sec, 0 transaction restart, 87  second 
+03: Completed 0 txns/sec, 0 transaction restart, 87  second 
+05: Completed 0 txns/sec, 0 transaction restart, 79  second 
+04: Completed 0 txns/sec, 0 transaction restart, 82  second 
+06: Completed 0 txns/sec, 0 transaction restart, 76  second 
+00: Completed 0 txns/sec, 0 transaction restart, 88  second 
+07: Completed 0 txns/sec, 0 transaction restart, 73  second 
+01: Completed 0 txns/sec, 0 transaction restart, 88  second 
+02: Completed 0 txns/sec, 0 transaction restart, 88  second 
+03: Completed 0 txns/sec, 0 transaction restart, 88  second 
+05: Completed 0 txns/sec, 0 transaction restart, 80  second 
+04: Completed 0 txns/sec, 0 transaction restart, 83  second 
+06: Completed 0 txns/sec, 0 transaction restart, 77  second 
+00: Completed 0 txns/sec, 0 transaction restart, 89  second 
+07: Completed 0 txns/sec, 0 transaction restart, 74  second 
+01: Completed 0 txns/sec, 0 transaction restart, 89  second 
+02: Completed 0 txns/sec, 0 transaction restart, 89  second 
+03: Completed 0 txns/sec, 0 transaction restart, 89  second 
+05: Completed 0 txns/sec, 0 transaction restart, 81  second 
+04: Completed 0 txns/sec, 0 transaction restart, 84  second 
+06: Completed 0 txns/sec, 0 transaction restart, 78  second 
+00: Completed 0 txns/sec, 0 transaction restart, 90  second 
+07: Completed 0 txns/sec, 0 transaction restart, 75  second 
+01: Completed 0 txns/sec, 0 transaction restart, 90  second 
+02: Completed 0 txns/sec, 0 transaction restart, 90  second 
+03: Completed 0 txns/sec, 0 transaction restart, 90  second 
+05: Completed 0 txns/sec, 0 transaction restart, 82  second 
+04: Completed 0 txns/sec, 0 transaction restart, 85  second 
+06: Completed 0 txns/sec, 0 transaction restart, 79  second 
+00: Completed 0 txns/sec, 0 transaction restart, 91  second 
+07: Completed 0 txns/sec, 0 transaction restart, 76  second 
+01: Completed 0 txns/sec, 0 transaction restart, 91  second 
+02: Completed 0 txns/sec, 0 transaction restart, 91  second 
+03: Completed 0 txns/sec, 0 transaction restart, 91  second 
+05: Completed 0 txns/sec, 0 transaction restart, 83  second 
+04: Completed 0 txns/sec, 0 transaction restart, 86  second 
+06: Completed 0 txns/sec, 0 transaction restart, 80  second 
+00: Completed 0 txns/sec, 0 transaction restart, 92  second 
+07: Completed 0 txns/sec, 0 transaction restart, 77  second 
+01: Completed 0 txns/sec, 0 transaction restart, 92  second 
+02: Completed 0 txns/sec, 0 transaction restart, 92  second 
+03: Completed 0 txns/sec, 0 transaction restart, 92  second 
+05: Completed 0 txns/sec, 0 transaction restart, 84  second 
+04: Completed 0 txns/sec, 0 transaction restart, 87  second 
+06: Completed 0 txns/sec, 0 transaction restart, 81  second 
+00: Completed 0 txns/sec, 0 transaction restart, 93  second 
+07: Completed 0 txns/sec, 0 transaction restart, 78  second 
+01: Completed 0 txns/sec, 0 transaction restart, 93  second 
+02: Completed 0 txns/sec, 0 transaction restart, 93  second 
+03: Completed 0 txns/sec, 0 transaction restart, 93  second 
+05: Completed 0 txns/sec, 0 transaction restart, 85  second 
+04: Completed 0 txns/sec, 0 transaction restart, 88  second 
+06: Completed 0 txns/sec, 0 transaction restart, 82  second 
+00: Completed 0 txns/sec, 0 transaction restart, 94  second 
+07: Completed 0 txns/sec, 0 transaction restart, 79  second 
+01: Completed 0 txns/sec, 0 transaction restart, 94  second 
+02: Completed 0 txns/sec, 0 transaction restart, 94  second 
+03: Completed 0 txns/sec, 0 transaction restart, 94  second 
+05: Completed 0 txns/sec, 0 transaction restart, 86  second 
+04: Completed 0 txns/sec, 0 transaction restart, 89  second 
+06: Completed 0 txns/sec, 0 transaction restart, 83  second 
+00: Completed 0 txns/sec, 0 transaction restart, 95  second 
+07: Completed 0 txns/sec, 0 transaction restart, 80  second 
+01: Completed 0 txns/sec, 0 transaction restart, 95  second 
+02: Completed 0 txns/sec, 0 transaction restart, 95  second 
+03: Completed 0 txns/sec, 0 transaction restart, 95  second 
+05: Completed 0 txns/sec, 0 transaction restart, 87  second 
+04: Completed 0 txns/sec, 0 transaction restart, 90  second 
+06: Completed 0 txns/sec, 0 transaction restart, 84  second 
+00: Completed 0 txns/sec, 0 transaction restart, 96  second 
+07: Completed 0 txns/sec, 0 transaction restart, 81  second 
+01: Completed 0 txns/sec, 0 transaction restart, 96  second 
+02: Completed 0 txns/sec, 0 transaction restart, 96  second 
+03: Completed 0 txns/sec, 0 transaction restart, 96  second 
+05: Completed 0 txns/sec, 0 transaction restart, 88  second 
+04: Completed 0 txns/sec, 0 transaction restart, 91  second 
+06: Completed 0 txns/sec, 0 transaction restart, 85  second 
+00: Completed 0 txns/sec, 0 transaction restart, 97  second 
+07: Completed 0 txns/sec, 0 transaction restart, 82  second 
+01: Completed 0 txns/sec, 0 transaction restart, 97  second 
+02: Completed 0 txns/sec, 0 transaction restart, 97  second 
+03: Completed 0 txns/sec, 0 transaction restart, 97  second 
+05: Completed 0 txns/sec, 0 transaction restart, 89  second 
+04: Completed 0 txns/sec, 0 transaction restart, 92  second 
+06: Completed 0 txns/sec, 0 transaction restart, 86  second 
+00: Completed 0 txns/sec, 0 transaction restart, 98  second 
+07: Completed 0 txns/sec, 0 transaction restart, 83  second 
+01: Completed 0 txns/sec, 0 transaction restart, 98  second 
+02: Completed 0 txns/sec, 0 transaction restart, 98  second 
+03: Completed 0 txns/sec, 0 transaction restart, 98  second 
+05: Completed 0 txns/sec, 0 transaction restart, 90  second 
+04: Completed 0 txns/sec, 0 transaction restart, 93  second 
+06: Completed 0 txns/sec, 0 transaction restart, 87  second 
+00: Completed 0 txns/sec, 0 transaction restart, 99  second 
+07: Completed 0 txns/sec, 0 transaction restart, 84  second 
+01: Completed 0 txns/sec, 0 transaction restart, 99  second 
+02: Completed 0 txns/sec, 0 transaction restart, 99  second 
+03: Completed 0 txns/sec, 0 transaction restart, 99  second 
+05: Completed 0 txns/sec, 0 transaction restart, 91  second 
+04: Completed 0 txns/sec, 0 transaction restart, 94  second 
+06: Completed 0 txns/sec, 0 transaction restart, 88  second 
+00: Completed 0 txns/sec, 0 transaction restart, 100  second 
+07: Completed 0 txns/sec, 0 transaction restart, 85  second 
+01: Completed 0 txns/sec, 0 transaction restart, 100  second 
+02: Completed 0 txns/sec, 0 transaction restart, 100  second 
+03: Completed 0 txns/sec, 0 transaction restart, 100  second 
+05: Completed 0 txns/sec, 0 transaction restart, 92  second 
+04: Completed 0 txns/sec, 0 transaction restart, 95  second 
+06: Completed 0 txns/sec, 0 transaction restart, 89  second 
+00: Completed 0 txns/sec, 0 transaction restart, 101  second 
+07: Completed 0 txns/sec, 0 transaction restart, 86  second 
+01: Completed 0 txns/sec, 0 transaction restart, 101  second 
+02: Completed 0 txns/sec, 0 transaction restart, 101  second 
+03: Completed 0 txns/sec, 0 transaction restart, 101  second 
+05: Completed 0 txns/sec, 0 transaction restart, 93  second 
+04: Completed 0 txns/sec, 0 transaction restart, 96  second 
+06: Completed 0 txns/sec, 0 transaction restart, 90  second 
+00: Completed 0 txns/sec, 0 transaction restart, 102  second 
+07: Completed 0 txns/sec, 0 transaction restart, 87  second 
+01: Completed 0 txns/sec, 0 transaction restart, 102  second 
+02: Completed 0 txns/sec, 0 transaction restart, 102  second 
+00: Got latency info
+01: Node 1 sending latency info to master
+01: Scheduler deleted
+02: Node 2 sending latency info to master
+03: Node 3 sending latency info to master
+03: Completed 0 txns/sec, 0 transaction restart, 102  second 
+00: Got latency info
+02: Scheduler deleted
+05: Scheduler deleted
+06: Scheduler deleted
+03: Scheduler deleted
+00: Got latency info
+00: Scheduler deleted
+04: Scheduler deleted
+07: Completed 0 txns/sec, 0 transaction restart, 88  second 
+01: bash: line 1: 11873 Segmentation fault      (core dumped) bin/deployment/db 1 mn 0
+05: bash: line 1:  5700 Segmentation fault      (core dumped) bin/deployment/db 5 mn 0
+06: bash: line 1: 12802 Segmentation fault      (core dumped) bin/deployment/db 6 mn 0
+02: Sequencer done
+02: ConnectionMultiplexer deleted
+04: Sequencer done
+04: ConnectionMultiplexer deleted
+07: Scheduler deleted
+03: bash: line 1:  4971 Segmentation fault      (core dumped) bin/deployment/db 3 mn 0
+07: bash: line 1: 12686 Segmentation fault      (core dumped) bin/deployment/db 7 mn 0

@@ -3,7 +3,7 @@ set -e
 
 set +e
 ./base_scripts/parallel_command.sh "`cat ./nodes`" "rm spec_calvin/core && rm calvin/core"
-./base_scripts/parallel_command.sh "`cat ./nodes`" "sudo-g5k /etc/init.d/ntp stop && sudo-g5k ntpdate ntp.ubuntu.com"
+./base_scripts/parallel_command.sh "`cat ./nodes`" "sudo /etc/init.d/ntp stop && sudo ntpdate ntp.ubuntu.com"
 pkill -f "deployment/db"
 set -e
 
@@ -36,14 +36,14 @@ done
 wait
 
 ## Re-format config 
-echo "systype = " $ToBench > $Folder/config
+echo "systype = " $BenchFolder > $Folder/config
 echo "benchtype = " $Type >> $Folder/config
 cat ~/$BenchFolder/myconfig.conf >> $Folder/config
 cp $Folder/config tmp
 awk -F '=' '{printf $2}END{printf "\n"}' tmp > $Folder/config 
 awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config 
 
-sleep 110 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+#sleep 130 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
 cd ../calvin_bench
 #./monitor_cpu.sh $Folder 20
 cd ../$BenchFolder

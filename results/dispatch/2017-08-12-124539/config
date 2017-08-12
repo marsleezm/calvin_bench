@@ -1,0 +1,2 @@
+  ssmr-paxos  5  1000 1000000 10 0 0 10 90 2 0 4  true
+systype benchtype index_num index_size total_key rw_set_size distribute_percent dependent_percent max_batch_size duration multi_txn_num_parts paxos_delay num_threads all_recon 
