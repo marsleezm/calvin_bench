@@ -36,8 +36,8 @@ done
 wait
 
 ## Re-format config 
-echo "systype = " $ToBench > $Folder/config
-echo "benchtype = " $Type >> $Folder/config
+echo "systype = " $BenchFolder > $Folder/config
+echo "benchtype = " m >> $Folder/config
 cat ~/$BenchFolder/myconfig.conf >> $Folder/config
 cp $Folder/config tmp
 awk -F '=' '{printf $2}END{printf "\n"}' tmp > $Folder/config 
