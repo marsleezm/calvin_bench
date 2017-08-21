@@ -13,7 +13,7 @@ BenchFolder=$1
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_batch_size $2
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf distribute_percent $3
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts $4
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 90 
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
 
 ## Make folder
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -31,7 +31,7 @@ cat ~/$BenchFolder/myconfig.conf
 nodes=`cat ~/calvin_bench/nodes`
 for node in $nodes
 do
-   ssh $node 'rm $BenchFolder/*output.txt' &
+   ssh $node rm $BenchFolder'/*output.txt' &
 done
 wait
 
@@ -43,7 +43,7 @@ cp $Folder/config tmp
 awk -F '=' '{printf $2}END{printf "\n"}' tmp > $Folder/config 
 awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config 
 
-sleep 110 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+#sleep 110 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
 cd ../calvin_bench
 #./monitor_cpu.sh $Folder 20
 cd ../$BenchFolder
