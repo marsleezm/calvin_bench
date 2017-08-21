@@ -1,13 +1,23 @@
 #!/bin/bash
 set -e
 
+BenchFolder=$1
+
+## Remove residual output files 
+nodes=`cat ~/calvin_bench/nodes`
+for node in $nodes
+do
+   ssh $node rm $BenchFolder'/*output.txt' &
+done
+wait
+
 set +e
 ./base_scripts/parallel_command.sh "`cat ./nodes`" "rm spec_calvin/core && rm calvin/core"
 ./base_scripts/parallel_command.sh "`cat ./nodes`" "sudo /etc/init.d/ntp stop && sudo ntpdate ntp.ubuntu.com"
 pkill -f "deployment/db"
 set -e
 
-BenchFolder=$1
+
 # Folder, bench type, max_batch_size, distribute_percent, dependent_percent,
 # index_num, index_size, max_sc, max_pend, max_suspend
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_batch_size $2
@@ -27,13 +37,6 @@ echo "Config is "
 cat ~/$BenchFolder/myconfig.conf
 ./base_scripts/copy_to_all.sh ../$BenchFolder/myconfig.conf ~/$BenchFolder
 
-## Remove residual output files 
-nodes=`cat ~/calvin_bench/nodes`
-for node in $nodes
-do
-   ssh $node 'rm $BenchFolder/*output.txt' &
-done
-wait
 
 ## Re-format config 
 echo "systype = " $BenchFolder > $Folder/config
@@ -51,7 +54,7 @@ cd ../$BenchFolder
 cd -
 
 wait
-./base_scripts/copy_from_all.sh *output.txt ~/$BenchFolder $Folder
+./base_scripts/literal_copy.sh \*output.txt ~/$BenchFolder $Folder
 #cp ../$BenchFolder/*output.txt $Folder
 echo "************ Expr finished *****************"
 
