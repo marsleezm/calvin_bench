@@ -13,7 +13,10 @@ BenchFolder=$1
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_batch_size $2
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf distribute_percent $3
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts $4
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos $5
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf batch_duration $6
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf rw_set_size 50 
 
 ## Make folder
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -47,7 +50,7 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 cd ../calvin_bench
 #./monitor_cpu.sh $Folder 20
 cd ../$BenchFolder
-./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db mn 0 > $Folder/output
+timeout 100 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db mn 0 > $Folder/output
 cd -
 
 wait
