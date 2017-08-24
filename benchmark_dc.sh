@@ -17,13 +17,15 @@ set +e
 pkill -f "deployment/db"
 set -e
 
-
 # Folder, bench type, max_batch_size, distribute_percent, dependent_percent,
 # index_num, index_size, max_sc, max_pend, max_suspend
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_batch_size $2
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf distribute_percent $3
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts $4
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 90 
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos $5
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
+# Do not change the order!
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf batch_duration $6
 
 ## Make folder
 Time=`date +'%Y-%m-%d-%H%M%S'`
