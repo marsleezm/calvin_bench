@@ -33,7 +33,7 @@ max_suspend=9
 #input_folder="./results/tpcc/all/"
 #input_folder="results/June/tpcc/calvin_after_fix/all_recon"
 #input_folder="results/June/tpcc/spec_calvinJune27/"
-input_folder="results/July/tpcc/"
+input_folder="results/tpcc-july29/"
 full_config_dict1, config_prop_dict1, config_set1 = build_config_dict(input_folder)
 calculate_avg_throughput(config_prop_dict1)
 

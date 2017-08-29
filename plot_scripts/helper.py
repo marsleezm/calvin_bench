@@ -67,6 +67,7 @@ def init_full_dict():
     full_dict['distribute_percent'] = {}
     full_dict['distribute_percent'][0] = []
     full_dict['dependent_percent'] = {}
+    full_dict['multi_txn_num_parts'] = {} 
     full_dict['index_num'] =dict()
     full_dict['index_size'] =dict()
     full_dict['rw_set_size'] =dict()
@@ -77,12 +78,12 @@ def init_full_dict():
     return full_dict
 
 def add_to_full_dict(full_dict, config_file, prop_dict):
-	for key, value in prop_dict.items():
-		if key in full_dict:
-			if value in full_dict[key]:
-				full_dict[key][value].append(config_file)
-			else:
-				full_dict[key][value] = [config_file]
+    for key, value in prop_dict.items():
+        if key in full_dict:
+            if value in full_dict[key]:
+                full_dict[key][value].append(config_file)
+            else:
+                full_dict[key][value] = [config_file]
 
 def get_data(myfile):
     commit = 0
@@ -94,9 +95,19 @@ def get_data(myfile):
             commit = float(line.split(',')[0].split(': ')[1])
             abort = float(line.split(',')[1].split(': ')[1]) 
         elif 'Total latency' in line:
-            latency = float(line.split(',')[0].split('is ')[1])
-            process_lat = float(line.split(',')[1].split(': ')[1]) 
-    return (commit, abort, latency, process_lat)
+            if line.count(',') == 1:
+                avg_lat = float(line.split(',')[0].split('is ')[1])/1000
+                med_lat = 0
+                lat_95 = 0
+                lat_99 = 0
+                lat_999 = 0 
+            else:
+                avg_lat = float(line.split(', ')[0].split(':')[1])
+                med_lat = float(line.split(', ')[1])
+                lat_95 = float(line.split(', ')[2])
+                lat_99 = float(line.split(', ')[3])
+                lat_999 = float(line.split(', ')[4])
+    return (commit, abort, avg_lat, med_lat, lat_95, lat_99, lat_999)
 
 # 
 # def build_throughput_dict(input_folder):
@@ -134,19 +145,19 @@ def build_config_dict(input_folder):
 		config_file = os.path.join(f, "config")
 		content_str = get_config_str(config_file)
 		config_throughput = os.path.join(f, "nonzero_throughput")
-		(commit, abort, latency, process_lat) = get_data(config_throughput)
+		(commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999) = get_data(config_throughput)
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
 			#print "Found repition for "+content_str+", original is "+first_appear 
-			config_prop_dict[first_appear]['throughput'].append((commit, abort, latency, process_lat))
+			config_prop_dict[first_appear]['throughput'].append((commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999))
 			config_prop_dict[first_appear]['config'] = content_str
 		else:
 			config_set[content_str] = config_file
 			config_dict = parse_config(config_file)
 			add_to_full_dict(config_reverse_dict, config_file, config_dict)
 			config_prop_dict[config_file] = config_dict
-			config_prop_dict[config_file]['throughput'] = [(commit, abort, latency, process_lat)]
+			config_prop_dict[config_file]['throughput'] = [(commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999)]
 			config_prop_dict[config_file]['config'] = content_str
 
 	return config_reverse_dict, config_prop_dict, config_set
@@ -157,19 +168,19 @@ def add_to_config_dict(config_reverse_dict, config_prop_dict, config_set, input_
 		config_file = os.path.join(f, "config")
 		content_str = get_config_str(config_file)
 		config_throughput = os.path.join(f, "nonzero_throughput")
-		(commit, abort, latency, process_lat) = get_data(config_throughput)
+		(commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999) = get_data(config_throughput)
 		
 		if content_str in config_set:
 			first_appear = config_set[content_str]
 			print("Found repition for "+config_file+", original is "+first_appear) 
-			config_prop_dict[first_appear]['throughput'].append((commit, abort, latency, process_lat))
+			config_prop_dict[first_appear]['throughput'].append((commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999))
 			config_prop_dict[first_appear]['config'] = content_str
 		else:
 			config_set[content_str] = config_file
 			config_dict = parse_config(config_file)
 			add_to_full_dict(config_reverse_dict, config_file, config_dict)
 			config_prop_dict[config_file] = config_dict
-			config_prop_dict[config_file]['throughput'] = [(commit, abort, latency, process_lat)]
+			config_prop_dict[config_file]['throughput'] = [(commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999)]
 			config_prop_dict[config_file]['config'] = content_str
 
 	return config_reverse_dict, config_prop_dict, config_set
@@ -178,26 +189,35 @@ def calculate_avg_throughput(dict):
 	for key, d in dict.items():
 		value = d['throughput']
 		if len(value) == 1:
-			[(commit, abort, latency, process_lat)] = value
-			dict[key]['throughput'] = (commit, abort/(commit+abort), latency/1000, process_lat/1000, 0, 0, 0, 0)
+			[(commit, abort, avg_latency, med_lat, lat_95, lat_99, lat_999)] = value
+			dict[key]['throughput'] = (commit, abort/(commit+abort), avg_latency, med_lat, lat_95, lat_99, lat_999, 0, 0, 0, 0, 0, 0, 0)
 		else:
-			commits = [c for (c, a, l, pl) in value]
-			aborts = [a for (c, a, l, pl) in value]
+			commits = [c for (c, a, al, ml, l95, l99, l999) in value]
+			aborts = [a for (c, a, al, ml, l95, l99, l999) in value]
 			abort_rate = [a/(c+a) for a, c in zip(aborts, commits)]
-			ls = [l/1000 for (c, a, l, pl) in value]
-			pls = [pl/1000 for (c, a, l, pl) in value]
+			ls = [al for (c, a, al, ml, l95, l99, l999) in value]
+			mls = [ml for (c, a, al, ml, l95, l99, l999) in value]
+			l95s = [l95 for (c, a, al, ml, l95, l99, l999) in value]
+			l99s = [l99 for (c, a, al, ml, l95, l99, l999) in value]
+			l999s = [l999 for (c, a, al, ml, l95, l99, l999) in value]
 			avgc = np.average(commits)
 			avga = np.average(abort_rate)
-			avgl = np.average(ls)
-			avgpl = np.average(pls)
+			avgls = np.average(ls)
+			avgmls = np.average(mls)
+			avgl95s = np.average(l95s)
+			avgl99s = np.average(l99s)
+			avgl999s = np.average(l999s)
 			sc = np.std(commits)
 			sa = np.std(abort_rate)
 			sl = np.std(ls)
-			spl = np.std(pls)
+			sml = np.std(mls)
+			sl95s = np.std(l95s)
+			sl99s = np.std(l99s)
+			sl999s = np.std(l999s)
 			if sc*8 > avgc:
 				print key+" has huge variance!"
 			#print "Commit avg is" +str(avgc)+", avg aborts is "+str(avga) +", std c is "+str(sc)+", std a is "+str(sa)
-			dict[key]['throughput'] = (avgc, avga, avgl, avgpl, sc, sa, sl, spl)
+			dict[key]['throughput'] = (avgc, avga, avgls, avgmls, avgl95s, avgl99s, avgl999s, sc, sa, sl, sml, sl95s, sl99s, sl999s)
 
 def complex_get(k, v, dict):
     prop = v[1:]
@@ -253,8 +273,6 @@ def get_data_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse
         config_list[v] = []
         for f in l:
             config_list[v].append(config_prop_dict[f]['config'])
-    print config_list
-    print series
 
     lines = []
     x_axis = []
@@ -265,6 +283,29 @@ def get_data_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse
             tl.append(config_prop_dict[l]['throughput'])
             x_axis.append(config_prop_dict[l][point_diff_prop])
         lines.append((prop, tl, x_axis))
+    lines.sort()
+    return lines 
+
+def get_data_series(fixed_props, line_diff_prop, point_diff_prop, other_props, config_reverse_dict, config_prop_dict):
+    series = get_series(fixed_props, line_diff_prop, point_diff_prop, config_reverse_dict, config_prop_dict)
+    config_list = {} 
+    for v, l in series.items():
+        config_list[v] = []
+        for f in l:
+            config_list[v].append(config_prop_dict[f]['config'])
+
+    lines = []
+    x_axis = []
+    for prop, line_points in series.items():
+        tl = []
+        x_axis = []
+        prop_values = [[] for i in range(len(other_props))]
+        for l in line_points:
+            tl.append(config_prop_dict[l]['throughput'])
+            x_axis.append(config_prop_dict[l][point_diff_prop])
+            for i in range(len(other_props)):
+                prop_values[i].append(config_prop_dict[l][other_props[i]])
+        lines.append((prop, tl, x_axis, prop_values))
     lines.sort()
     return lines 
 	
