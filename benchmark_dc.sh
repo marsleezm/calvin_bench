@@ -2,8 +2,6 @@
 set -e
 
 set +e
-./base_scripts/parallel_command.sh "`cat ./nodes`" "rm spec_calvin/core && rm calvin/core"
-./base_scripts/parallel_command.sh "`cat ./nodes`" "sudo-g5k /etc/init.d/ntp stop && sudo-g5k ntpdate ntp.ubuntu.com"
 pkill -f "deployment/db"
 set -e
 
@@ -16,7 +14,7 @@ BenchFolder=$1
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos $5
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 60 
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf batch_duration $6
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf rw_set_size 50 
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf rw_set_size 10 
 
 ## Make folder
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -50,7 +48,8 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 cd ../calvin_bench
 #./monitor_cpu.sh $Folder 20
 cd ../$BenchFolder
-timeout 100 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db mn 0 > $Folder/output
+../calvin_bench/mytimeout.sh -t 140 ./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db mn 0 #> $Folder/output
+#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db mn 0 #> $Folder/output
 cd -
 
 wait
