@@ -98,18 +98,28 @@ def get_precise_th(files, result_dict):
                     result_dict[node] = (commit+float(line[:-1].split(',')[0]), abort+ float(line[:-1].split(',')[1]), line_num+1)
 
 def get_latency(files, latency_dict):
+    total_lat = 0
+    total_count = 0
     for f in files:
         node = int(f.split('/')[-1].split('output.txt')[0])
         is_latency = False
         if node == 0:
             with open(f) as fl:
                 lines = fl.readlines()
-                latency_dict[node] = lines[-3][:-1]
-                latency_dict['summary'] = lines[-1][:-1]
+                if lines[-2][0] == 'S':
+                    latency_dict[node] = lines[-3][:-1]
+                    latency_dict['summary'] = lines[-1][:-1]
+                else:
+                    latencies = lines[-1][:-1].split(', ')
+                    print latencies
+                    latency_dict[node] = int(latencies[0])
+                    total_lat += int(latencies[1])
+                    total_count += int(latencies[2])
         else:
             with open(f) as fl:
                 lines = fl.readlines()
                 latency_dict[node] = lines[-1][:-1]
+    latency_dict['summary'] = total_lat/total_count
 
 a_type=sys.argv[1]
 folders=glob("./results/"+a_type+"/201*")
@@ -119,12 +129,17 @@ if folders == []:
 for folder in folders:
     #print folder
     files = glob(folder+"/*output.txt")
+    if len(files) == 0:
+        print folder+" crashed in the beginning, removing it!"
+        shutil.rmtree(folder)
+        continue
+        
     result_dict = {} 
     latency_dict = {}
-    if len(files) == 8:
-        get_precise_th(files, result_dict)
-    else:
-        get_rough_th(folder, result_dict)
+    #if len(files) == 8:
+    get_precise_th(files, result_dict)
+    #else:
+    #    get_rough_th(folder, result_dict)
     
     print "Processing "+folder
     get_latency(files,  latency_dict)
@@ -154,6 +169,3 @@ for folder in folders:
         th_output.write('\n')
         th_output.write('Total latency: '+str(latency_dict['summary']))
         th_output.write('\n')
-    else:
-        print folder+" crashed in the beginning, removing it!"
-        shutil.rmtree(folder)
