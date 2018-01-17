@@ -1,6 +1,25 @@
 #!/bin/bash
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
+recon="false"
+./benchmark.sh ssmr t 7 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 6 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 5 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 4 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 3 50 0 5 1000 10 1 10 2 200 $recon
+
+./benchmark.sh ssmr t 7 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 6 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 5 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 4 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 3 50 0 5 1000 10 1 10 2 200 $recon
+
+./benchmark.sh ssmr t 7 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 6 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 5 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 4 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 3 50 0 5 1000 10 1 10 2 200 $recon
+exit
 
 if [ 1 == 2 ]
 then
@@ -65,57 +84,35 @@ do
 for s in $seq
 do
 
+./benchmark.sh ssmr t 20 0 0 5 1000 10 1 10 2 200 $recon 
+./benchmark.sh ssmr t 30 0 0 5 1000 10 1 10 2 200 $recon 
+./benchmark.sh ssmr t 40 0 0 5 1000 10 1 10 2 200 $recon 
+./benchmark.sh ssmr t 50 0 0 5 1000 10 1 10 2 200 $recon 
 ./benchmark.sh ssmr t 60 0 0 5 1000 10 1 10 2 200 $recon 
-./benchmark.sh ssmr t 80 0 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 100 0 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 120 0 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 140 0 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 160 0 0 5 1000 10 1 10 2 200 $recon
 
-./benchmark.sh ssmr t 10 100 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 20 100 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 30 100 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 35 100 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 40 100 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 10 1 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 15 1 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 20 1 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 30 1 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 40 1 0 5 1000 10 1 10 2 200 $recon
 
-#./benchmark.sh ssmr t 20 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 30 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 40 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 50 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 60 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 80 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 100 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 120 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 140 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 160 50 0 5 1000 10 1 10 2 200 $recon
-##./benchmark.sh ssmr t 180 50 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 200 50 0 5 1000 10 1 10 2 200 $recon
-
-#./benchmark.sh ssmr t 40 20 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 50 20 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 60 20 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 80 20 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 100 20 0 5 1000 10 1 10 2 200 $recon
-#./benchmark.sh ssmr t 120 20 0 5 1000 10 1 10 2 200 $recon
-
-./benchmark.sh ssmr t 10 10 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 4 10 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 8 10 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 12 10 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 16 10 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh ssmr t 20 10 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 30 10 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 40 10 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 50 10 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 60 10 0 5 1000 10 1 10 2 200 $recon
+
+./benchmark.sh ssmr t 1 100 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 2 100 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 3 100 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 4 100 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh ssmr t 5 100 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 50 10 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 70 10 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 90 10 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 110 10 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 130 10 0 5 1000 10 1 10 2 200 $recon
 
-./benchmark.sh ssmr t 20 1 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 30 1 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 40 1 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 50 1 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 60 1 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh ssmr t 70 1 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 80 1 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 100 1 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh ssmr t 120 1 0 5 1000 10 1 10 2 200 $recon
@@ -139,6 +136,7 @@ do
 done
 
 done
+exit
 
 seq="1"
 opt="false"

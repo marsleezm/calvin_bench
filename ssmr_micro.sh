@@ -1,7 +1,17 @@
 #!/bin/bash
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
-seq="1"
+dep=0
+c=1000
+./benchmark.sh ssmr m 12 50 $dep 5 $c 10 1 10 2 200 false
+./benchmark.sh ssmr m 13 50 $dep 5 $c 10 1 10 2 200 false
+#./benchmark.sh ssmr m 4 50 $dep 5 $c 10 1 10 2 200 false
+#./benchmark.sh ssmr m 4 50 $dep 5 $c 10 1 10 2 200 false
+#./benchmark.sh ssmr m 6 50 $dep 5 $c 10 1 10 2 200 false
+#./benchmark.sh ssmr m 8 50 $dep 5 $c 10 1 10 2 200 false
+exit
+
+seq="1 2"
 cs="1000"
 #deps="0 50 100"
 deps="0"
@@ -11,58 +21,46 @@ do
 	do
 		for dep in $deps
 		do
-				./benchmark.sh ssmr m 100 1 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 200 1 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 300 1 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 400 1 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 500 1 $dep 5 $c 10 1 10 2 200 false
-
-				./benchmark.sh ssmr m 100 50 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 200 50 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 250 50 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 300 50 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 400 50 $dep 5 $c 10 1 10 2 200 false
-	
-				./benchmark.sh ssmr m 100 0 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 200 0 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 80 0 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 160 0 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 240 0 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 320 0 $dep 5 $c 10 1 10 2 200 false
 				./benchmark.sh ssmr m 400 0 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 600 0 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 800 0 $dep 5 $c 10 1 10 2 200 false
 
-				#./benchmark.sh ssmr m 100 0.01 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 200 0.01 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 400 0.01 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 600 0.01 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 800 0.01 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 30 1 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 60 1 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 90 1 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 120 1 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 150 1 $dep 5 $c 10 1 10 2 200 false
 
-				#./benchmark.sh ssmr m 100 0.1 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 200 0.1 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 400 0.1 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 550 0.1 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 700 0.1 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 10 10 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 20 10 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 30 10 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 40 10 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 50 10 $dep 5 $c 10 1 10 2 200 false
 
+				#./benchmark.sh ssmr m 6 50 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 12 50 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 18 50 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 24 50 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 30 50 $dep 5 $c 10 1 10 2 200 false
 
-				./benchmark.sh ssmr m 100 10 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 200 10 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 400 10 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 500 10 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 600 10 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 4 50 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 8 50 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 12 50 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 16 50 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 20 50 $dep 5 $c 10 1 10 2 200 false
+				./benchmark.sh ssmr m 24 50 $dep 5 $c 10 1 10 2 200 false
 
-				#./benchmark.sh ssmr m 100 20 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 200 20 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 350 20 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 450 20 $dep 5 $c 10 1 10 2 200 false
-				#./benchmark.sh ssmr m 550 20 $dep 5 $c 10 1 10 2 200 false
-
-
-				./benchmark.sh ssmr m 100 100 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 150 100 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 200 100 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 250 100 $dep 5 $c 10 1 10 2 200 false
-				./benchmark.sh ssmr m 300 100 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 2 100 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 4 100 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 6 100 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 8 100 $dep 5 $c 10 1 10 2 200 false
+				#./benchmark.sh ssmr m 10 100 $dep 5 $c 10 1 10 2 200 false
 		done
 	done
 done
+exit
 
 seq="1 2"
 cs="1000 50000"
@@ -91,23 +89,17 @@ do
 				#./benchmark.sh spec_calvin m 70 20 $dep 5 $c 20 1 10 2 200 false
 				#./benchmark.sh spec_calvin m 80 20 $dep 5 $c 20 1 10 2 200 false
 
+				./benchmark.sh spec_calvin m 10 10 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 20 10 $dep 5 $c 20 1 10 2 200 false
 				./benchmark.sh spec_calvin m 30 10 $dep 5 $c 20 1 10 2 200 false
 				./benchmark.sh spec_calvin m 40 10 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 60 10 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 80 10 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 100 10 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 50 10 $dep 5 $c 20 1 10 2 200 false
 
-				./benchmark.sh spec_calvin m 100 1 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 30 1 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 60 1 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 90 1 $dep 5 $c 20 1 10 2 200 false
 				./benchmark.sh spec_calvin m 120 1 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 160 1 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 180 1 $dep 5 $c 20 1 10 2 200 false
-				./benchmark.sh spec_calvin m 200 1 $dep 5 $c 20 1 10 2 200 false
-
-				#./benchmark.sh spec_calvin m 100 0.1 $dep 5 $c 20 1 10 2 200 false
-				#./benchmark.sh spec_calvin m 200 0.1 $dep 5 $c 20 1 10 2 200 false
-				#./benchmark.sh spec_calvin m 300 0.1 $dep 5 $c 20 1 10 2 200 false
-				#./benchmark.sh spec_calvin m 400 0.1 $dep 5 $c 20 1 10 2 200 false
-				#./benchmark.sh spec_calvin m 500 0.1 $dep 5 $c 20 1 10 2 200 false
+				./benchmark.sh spec_calvin m 150 1 $dep 5 $c 20 1 10 2 200 false
 
 				#./benchmark.sh spec_calvin m 200 0.01 $dep 5 $c 20 1 10 2 200 false
 				#./benchmark.sh spec_calvin m 300 0.01 $dep 5 $c 20 1 10 2 200 false

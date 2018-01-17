@@ -1,83 +1,6 @@
 #!/bin/bash
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
-./benchmark.sh spec_calvin t 37 10 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 37 10 0 5 1000 10 1 10 2 200 true 0
-
-./benchmark.sh spec_calvin t 5 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 10 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 15 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 20 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 25 50 0 5 1000 10 1 10 2 200 true 0
-
-./benchmark.sh spec_calvin t 5 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 10 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 15 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 20 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 25 50 0 5 1000 10 1 10 2 200 true 0
-
-./benchmark.sh spec_calvin t 5 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 10 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 15 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 20 50 0 5 1000 10 1 10 2 200 true 0
-./benchmark.sh spec_calvin t 25 50 0 5 1000 10 1 10 2 200 true 0
-
-if [ 1 == 2 ]
-then
-
-seq="1 2"
-for s in $seq
-do
-./benchmark.sh spec_calvin t 4 100 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 6 100 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 8 100 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 10 100 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 10 50 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 12 50 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 14 50 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 16 50 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 10 20 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 15 20 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 20 20 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 25 20 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 20 10 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 25 10 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 30 10 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 35 10 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 30 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 40 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 50 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 60 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 70 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 80 1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 100 1 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 30 0.1 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 40 0.1 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 50 0.1 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 60 0.1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 70 0.1 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 80 0.1 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 40 0.01 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 50 0.01 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 60 0.01 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 70 0.01 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 80 0.01 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 90 0.01 0 5 1000 10 1 10 2 200 true
-
-./benchmark.sh spec_calvin t 40 0 0 5 1000 10 1 10 2 200 true 
-./benchmark.sh spec_calvin t 60 0 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 80 0 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 100 0 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 120 0 0 5 1000 10 1 10 2 200 true
-./benchmark.sh spec_calvin t 140 0 0 5 1000 10 1 10 2 200 true
-done
-fi
 
 
 all_recons="false"
@@ -92,6 +15,7 @@ do
 ./benchmark.sh calvin_less_recon t 8 0 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh calvin_less_recon t 10 0 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh calvin_less_recon t 12 0 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh calvin_less_recon t 15 0 0 5 1000 10 1 10 2 200 $recon
 
 #./benchmark.sh calvin_less_recon t 8 1 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh calvin_less_recon t 10 1 0 5 1000 10 1 10 2 200 $recon
@@ -109,14 +33,12 @@ do
 ./benchmark.sh calvin_less_recon t 9 10 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh calvin_less_recon t 12 10 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh calvin_less_recon t 15 10 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh calvin_less_recon t 18 10 0 5 1000 10 1 10 2 200 $recon
 
-./benchmark.sh calvin_less_recon t 6 50 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh calvin_less_recon t 9 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh calvin_less_recon t 8 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh calvin_less_recon t 10 50 0 5 1000 10 1 10 2 200 $recon
 ./benchmark.sh calvin_less_recon t 12 50 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh calvin_less_recon t 15 50 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh calvin_less_recon t 18 50 0 5 1000 10 1 10 2 200 $recon
-./benchmark.sh calvin_less_recon t 20 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh calvin_less_recon t 14 50 0 5 1000 10 1 10 2 200 $recon
+./benchmark.sh calvin_less_recon t 16 50 0 5 1000 10 1 10 2 200 $recon
 
 #./benchmark.sh calvin_less_recon t 10 100 0 5 1000 10 1 10 2 200 $recon
 #./benchmark.sh calvin_less_recon t 15 100 0 5 1000 10 1 10 2 200 $recon

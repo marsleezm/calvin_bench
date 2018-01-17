@@ -22,7 +22,7 @@ then
 BenchFolder="calvin"
 elif [ $ToBench == "ssmr" ];
 then
-BenchFolder="calvin"
+BenchFolder="ssmr"
 elif [ $ToBench == "calvin_general_recon" ];
 then
 BenchFolder="calvin"
@@ -38,17 +38,22 @@ fi
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf index_num $6
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf index_size $7
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_sc $8
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_pend $9
+
 if [ $Type == "t" ] 
 then
- 	./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 100 
+	#Duration=150
+	Duration=80
+	#Duration=80
 else
- 	./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration 90 
+	#Duration=120
+	#Duration=100
+	Duration=60
 fi
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf max_suspend ${10}
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${11}
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${12}
-./base_scripts/replace.sh ../$BenchFolder/myconfig.conf all_recon ${13}
+Monitor=$((Duration / 5))
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf duration $Duration
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${9}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${10}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf update_percent ${11}
 
 
 Time=`date +'%Y-%m-%d-%H%M%S'`
@@ -74,15 +79,15 @@ awk -F '=' '{printf $1}END{printf "\n"}' tmp >> $Folder/config
 echo "************ Running expr *****************"
 if [ $Type == 't' ]
 then
-	sleep 130 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+	sleep $((Duration+25)) && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f deployment" && pkill -f deployment &
 	cd ../calvin_bench
-	./monitor_cpu.sh $Folder 26
+	#./monitor_cpu.sh $Folder $((Monitor+5))
     cd ../$BenchFolder
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 else
-	sleep 100 && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f benchmark && pkill -f deployment" && pkill -f deployment && pkill -f monitor && pkill -f sar &
+	sleep $((Duration+10)) && ../calvin_bench/base_scripts/parallel_command.sh "`cat ../calvin_bench/others`" "pkill -f deployment" && pkill -f deployment &
 	cd ../calvin_bench
-	./monitor_cpu.sh $Folder 20
+	#./monitor_cpu.sh $Folder $((Monitor+2))
     cd ../$BenchFolder
 	./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0 > $Folder/output
 	#./bin/deployment/cluster -c dist-deploy.conf -p ./src/deployment/portfile -d bin/deployment/db ${Type}n 0
