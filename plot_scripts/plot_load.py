@@ -10,10 +10,7 @@ import numpy as np
 
 
 # input data
-
-# plot_lines(series1, x_axis, "Dependent 0", output_folder)
-def plot_load(throughput_list, legend_list, x_labels, caption, output_folder):
-    plt.figure()
+def plot_load(throughput_list, caption, output_folder, axis):
     markers=["^", "8", "s", "h", "v", "D", "v"]
 
     colors=['#000000', '#253494', '#2c7fb8', '#41b6c4', '#a1dab4', '#ffffcc']
@@ -21,21 +18,12 @@ def plot_load(throughput_list, legend_list, x_labels, caption, output_folder):
     handlers=[]
     legends = []
     cnt = 0
-    for h, throughput in enumerate(throughput_list):
-        for i, (leg, th_tuple) in enumerate(throughput):
-            th_list = [th for (th, abort, lat, process_lat, th_std, abort_std, lat_std, pl_std) in th_tuple]
-            lat_list = [lat/1000 for (th, abort, lat, process_lat, th_std, abort_std, lat_std, pl_std) in th_tuple]
-            hlt,  = plt.plot(th_list, lat_list, color=colors[i], linewidth=1.5, marker=markers[i], linestyle=ls[h])
-            handlers.append(hlt)
-            #print legend_list[h]
-            legends.append(legend_list[cnt])
-            cnt += 1
+    print throughput_list 
+    for h, (type, contents, x_axis) in enumerate(throughput_list):
+        avglat = [alat for (th, abort, alat, mlat, lat95, lat99, lat999, th_std, abort_std, al_std, ml_std, l95_std, l99_std, l999_std) in contents]
+        laterr = [al_std for (th, abort, alat, mlat, lat95, lat99, lat999, th_std, abort_std, al_std, ml_std, l95_std, l99_std, l999_std) in contents]
+        hlt = axis.errorbar(x_axis, avglat, yerr=laterr, color=colors[h], linewidth=1.5, marker=markers[h], linestyle=ls[h])
+        handlers.append(hlt)
+        legends.append(type)
+        cnt += 1
 
-	plt.legend(handlers, legends, loc=0, labelspacing=0.1, handletextpad=0.15, borderpad=0.26)
-	plt.xlabel('Committed txns/s')
-	plt.ylabel('Latency (ms)')
-	#plt.xlim([0, 300000])
-	plt.ylim([0, 1500])
-	#plt.yscale("log")
-	#plt.savefig(output_folder+'/'+caption+'.pdf', format='pdf', bbox_inches='tight')
-	plt.savefig(output_folder+'/'+caption+'.png',  bbox_inches='tight')
