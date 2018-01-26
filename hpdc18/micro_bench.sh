@@ -2,24 +2,100 @@
 
 # Folder, bench type, m_batch, dist_p, dep_p, index_num, index_size, max_sc, max_pend, max_suspend
 
-seq="1 2 3"
+#./benchmark.sh calvin_less_recon m 80 0 50 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 80 0 50 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 60 0 100 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 60 0 100 5 50000 40 2 200 10
+
+./benchmark.sh calvin_less_recon m 2 10 50 5 1000 40 2 200 10
+./benchmark.sh calvin_less_recon m 2 10 50 5 1000 40 2 200 10
+./benchmark.sh calvin_less_recon m 4 10 100 5 1000 40 2 200 10
+./benchmark.sh calvin_less_recon m 4 10 100 5 1000 40 2 200 10
+
+#./benchmark.sh calvin_less_recon m 51 10 100 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 51 10 100 5 50000 40 2 200 10
+
+#./benchmark.sh calvin_less_recon m 100 50 10 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 100 50 10 5 50000 40 2 200 10
+
+#./benchmark.sh calvin_less_recon m 61 50 50 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 61 50 50 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 47 50 100 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 47 50 100 5 50000 40 2 200 10
+
+#./benchmark.sh calvin_less_recon m 2 50 50 5 1000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 2 50 50 5 1000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 3 50 100 5 1000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 3 50 100 5 1000 40 2 200 10
+exit
+./benchmark.sh calvin_less_recon m 5 0 100 5 1000 40 2 200 10
+./benchmark.sh calvin_less_recon m 5 0 100 5 1000 40 2 200 10
+
+
+#./benchmark.sh calvin_less_recon m 40 50 100 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 40 50 100 5 50000 40 2 200 10
+#./benchmark.sh calvin_less_recon m 40 50 100 5 50000 40 2 200 10
+seq="1 2"
 for i in $seq
 do
-./benchmark.sh spec_calvin m 650 0 0 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 190 1 0 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 100 10 0 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 80 50 0 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 650 0 0 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 190 1 0 5 1000 40 2 200 10
 
-./benchmark.sh spec_calvin m 650 0 50 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 190 1 50 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 100 10 50 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 80 50 50 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 450 1 0 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 450 1 1 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 450 1 10 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 450 1 50 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 450 1 100 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 400 1 0 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 400 1 0 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 350 1 0 5 1000 50 2 200 10
+./benchmark.sh spec_calvin m 350 1 1 5 1000 50 2 200 10
+./benchmark.sh spec_calvin m 350 1 10 5 1000 50 2 200 10
+./benchmark.sh spec_calvin m 350 1 50 5 1000 50 2 200 10
+./benchmark.sh spec_calvin m 350 1 100 5 1000 50 2 200 10
 
-./benchmark.sh spec_calvin m 650 0 100 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 190 1 100 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 100 10 100 5 1000 40 2 200 10
-./benchmark.sh spec_calvin m 80 50 100 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 100 10 0 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 80 50 0 5 1000 40 2 200 10
 
+#./benchmark.sh spec_calvin m 400 10 0 5 50000 300 2 200 10
+./benchmark.sh spec_calvin m 400 10 1 5 50000 300 2 200 10
+./benchmark.sh spec_calvin m 400 10 10 5 50000 300 2 200 10
+./benchmark.sh spec_calvin m 400 10 50 5 50000 300 2 200 10
+#./benchmark.sh spec_calvin m 400 10 100 5 50000 300 2 200 10
+
+#./benchmark.sh spec_calvin m 300 10 0 5 1000 100 2 200 10
+./benchmark.sh spec_calvin m 300 10 1 5 1000 80 2 200 10
+./benchmark.sh spec_calvin m 300 10 10 5 1000 70 2 200 10
+./benchmark.sh spec_calvin m 300 10 50 5 1000 60 2 200 10
+./benchmark.sh spec_calvin m 300 10 100 5 1000 50 2 200 10
+
+#./benchmark.sh spec_calvin m 650 0 50 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 190 1 50 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 100 10 50 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 80 50 50 5 1000 40 2 200 10
+
+#./benchmark.sh spec_calvin m 650 0 100 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 190 1 100 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 100 10 100 5 1000 40 2 200 10
+#./benchmark.sh spec_calvin m 80 50 100 5 1000 40 2 200 10
+
+#./benchmark.sh spec_calvin m 250 50 0 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 250 50 1 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 250 50 10 5 50000 200 2 200 10
+./benchmark.sh spec_calvin m 250 50 50 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 250 50 100 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 400 50 0 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 400 50 0 5 50000 200 2 200 10
+#./benchmark.sh spec_calvin m 150 50 0 5 1000 60 2 200 10
+./benchmark.sh spec_calvin m 150 50 1 5 1000 60 2 200 10
+./benchmark.sh spec_calvin m 150 50 10 5 1000 60 2 200 10
+./benchmark.sh spec_calvin m 150 50 50 5 1000 60 2 200 10
+#./benchmark.sh spec_calvin m 150 50 100 5 1000 60 2 200 10
+done
+exit
+
+if [ 1 == 2 ]
+then
 ./benchmark.sh spec_calvin m 650 0 0 5 50000 40 2 200 10
 ./benchmark.sh spec_calvin m 190 1 0 5 50000 40 2 200 10
 ./benchmark.sh spec_calvin m 100 10 0 5 50000 40 2 200 10
@@ -34,7 +110,7 @@ do
 ./benchmark.sh spec_calvin m 190 1 100 5 50000 40 2 200 10
 ./benchmark.sh spec_calvin m 100 10 100 5 50000 40 2 200 10
 ./benchmark.sh spec_calvin m 80 50 100 5 50000 40 2 200 10
-done
+fi
 exit
 for i in $seq
 do

@@ -54,6 +54,8 @@ Monitor=$((Duration / 5))
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf multi_txn_num_parts ${9}
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf paxos_delay ${10}
 ./base_scripts/replace.sh ../$BenchFolder/myconfig.conf update_percent ${11}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf uncertain_percent ${12}
+./base_scripts/replace.sh ../$BenchFolder/myconfig.conf nodes ${13}
 
 
 Time=`date +'%Y-%m-%d-%H%M%S'`
